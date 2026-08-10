@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>You Are the Agent — worksheet</title>
+<style>
+/* Print-first. People write on this, so it is ink-light and high-contrast —
+   the deck's dark theme would be unusable on paper and wasteful to print. */
+@page{size:letter;margin:14mm 14mm 12mm}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  color:#14161C;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{padding:0;page-break-after:always}
+.page:last-child{page-break-after:auto}
+h1{font-size:27px;line-height:1.1;margin:0 0 4px;letter-spacing:-.02em}
+.sub{font:600 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;
+  text-transform:uppercase;color:#7A8291;margin-bottom:16px}
+h2{font-size:16px;margin:20px 0 6px;letter-spacing:-.01em}
+h2 .n{display:inline-block;width:22px;height:22px;border-radius:11px;background:#14161C;color:#fff;
+  font:700 12px/22px ui-monospace,monospace;text-align:center;margin-right:8px;vertical-align:2px}
+p{margin:0 0 8px;max-width:62em}
+.hint{font-size:12.5px;color:#5C6470;margin-bottom:8px}
+.rule{height:1px;background:#D8DCE3;margin:14px 0}
+
+table{border-collapse:collapse;width:100%;margin-top:6px}
+th{font:700 10.5px/1.2 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
+  color:#7A8291;text-align:left;padding:0 6px 5px 0;border-bottom:1.5px solid #14161C}
+/* Vertical rules matter here: people write in these cells, and without them the
+   engagement and energy columns are invisible on paper. */
+td{border-bottom:1px solid #C9CFD8;border-right:1px solid #E2E6EC;
+  height:30px;padding:2px 6px 2px 0;font-size:13px;color:#5C6470}
+td:last-child{border-right:none}
+th{border-right:1px solid #E2E6EC}
+th:last-child{border-right:none}
+.scale{font:600 11px/1 ui-monospace,monospace;color:#9AA2AE;letter-spacing:.06em}
+
+.gauges{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+.gauge{border:1.5px solid #14161C;border-radius:6px;padding:9px 10px}
+.gauge b{font-size:13px;letter-spacing:.02em}
+.gauge .bar{margin-top:7px;height:15px;border:1.5px solid #9AA2AE;border-radius:3px;
+  background:repeating-linear-gradient(90deg,#EDEFF3 0 2px,transparent 2px 25%)}
+.gauge .ends{display:flex;justify-content:space-between;font:600 9.5px/1.4 ui-monospace,monospace;color:#9AA2AE}
+
+.aeiou{margin-top:4px}
+.aeiou div{display:flex;gap:9px;align-items:baseline;margin:7px 0}
+.aeiou .k{font:800 15px/1 ui-monospace,monospace;width:16px;flex:none}
+/* fixed column so every write-on rule starts at the same x */
+.aeiou .q{font-size:13px;width:215px;flex:none}
+.aeiou .line{flex:1;border-bottom:1px solid #C9CFD8;height:19px}
+
+.box{border:1.5px solid #14161C;border-radius:6px;padding:11px 13px;margin-top:8px}
+.box.hi{border-width:2.5px;background:#FFFBEC}
+.blank{border-bottom:1.5px solid #14161C;display:inline-block;min-width:150px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:8px}
+.three .card{border:1.5px solid #14161C;border-radius:6px;padding:9px 10px;min-height:112px}
+.three .card b{font-size:12.5px;display:block;margin-bottom:5px}
+.three .card .lines{margin-top:5px}
+.lines div{border-bottom:1px solid #C9CFD8;height:19px}
+
+.refs{font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:#5C6470}
+.refs a{color:#1B4FD8;text-decoration:none}
+.refs li{margin:4px 0}
+.foot{margin-top:16px;padding-top:9px;border-top:1px solid #D8DCE3;font-size:11.5px;color:#7A8291}
+.warn{background:#FFF3F3;border-left:3px solid #C4363C;padding:8px 11px;font-size:12.5px;margin-top:8px}
+</style></head><body>
+
+<div class="page">
+  <h1>You Are the Agent</h1>
+  <div class="sub">ERA Minicon 2026 · Alyssa Adams · bring this, or a napkin</div>
+
+  <p><strong>This is not a careers worksheet.</strong> A career is one of four gauges. Everything here is
+  adapted from <em>Designing Your Life</em> (Burnett &amp; Evans) — a design-school heuristic with a million
+  readers and, honestly, no controlled trial. Use it because the structure is interesting.</p>
+
+  <h2><span class="n">1</span>Life dashboard — where are you actually?</h2>
+  <div class="hint">Fill each gauge from empty to full. Don't overthink it; the first instinct is the data.</div>
+  <div class="gauges">
+    <div class="gauge"><b>Health</b><div class="bar"></div><div class="ends"><span>EMPTY</span><span>FULL</span></div></div>
+    <div class="gauge"><b>Work</b><div class="bar"></div><div class="ends"><span>EMPTY</span><span>FULL</span></div></div>
+    <div class="gauge"><b>Play</b><div class="bar"></div><div class="ends"><span>EMPTY</span><span>FULL</span></div></div>
+    <div class="gauge"><b>Love</b><div class="bar"></div><div class="ends"><span>EMPTY</span><span>FULL</span></div></div>
+  </div>
+
+  <h2><span class="n">2</span>Good Time Journal — five activities from last week</h2>
+  <div class="hint">Real ones, with names. <strong>Engagement and energy are different axes</strong> — you can be
+  completely absorbed and completely drained, and that combination is the most useful row on this page.</div>
+  <table>
+    <tr>
+      <th style="width:52%">Activity</th>
+      <th style="width:18%">Engagement <span class="scale">0 → 5</span></th>
+      <th style="width:18%">Energy <span class="scale">−3 → +3</span></th>
+      <th style="width:12%">Flow?</th>
+    </tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h2><span class="n">3</span>AEIOU — on your highest-engagement row</h2>
+  <div class="aeiou">
+    <div><span class="k">A</span><span class="q">Activities — what were you <em>doing</em>?</span><span class="line"></span></div>
+    <div><span class="k">E</span><span class="q">Environments — where, and how did it feel?</span><span class="line"></span></div>
+    <div><span class="k">I</span><span class="q">Interactions — with people? systems? machines?</span><span class="line"></span></div>
+    <div><span class="k">O</span><span class="q">Objects — what was in play?</span><span class="line"></span></div>
+    <div><span class="k">U</span><span class="q">Users — who else, helping or hindering?</span><span class="line"></span></div>
+  </div>
+
+  <h2><span class="n">4</span>The question this whole exercise exists for</h2>
+  <div class="box hi">
+    <p style="margin:0"><strong>Find your lowest-energy activity. Who chose it?</strong></p>
+    <div style="border-bottom:1.5px solid #14161C;height:26px;margin-top:9px"></div>
+  </div>
+
+  <div class="warn"><strong>An honest caveat.</strong> You just did this retrospectively, and retrospective
+  recall of how things felt is biased — peak-end effects, mood-congruent recall, duration neglect. That is an
+  argument for running the real version prospectively for two or three weeks. Not against the exercise.</div>
+
+  <div class="foot">Good Time Journal &amp; AEIOU: <em>Designing Your Life</em> ch. 3. Official worksheets are free at
+  designingyour.life/worksheets-and-discussion-questions. AEIOU is not a DYL invention — it is an
+  ethnographic field-observation framework from design research (Doblin Group, c. 1991), turned around to
+  observe yourself.</div>
+</div>
+
+<div class="page">
+  <h1>Take it home</h1>
+  <div class="sub">the parts that need more than seven minutes</div>
+
+  <h2><span class="n">5</span>The translation drill</h2>
+  <div class="hint">One sentence. No jargon. It has to survive being repeated by a hiring manager to their boss.
+  You are not translating a <em>label</em> — you are naming a <em>method</em>.</div>
+  <div class="box">
+    <p style="font-size:15px;line-height:2.1;margin:0">
+      I build / study <span class="blank" style="min-width:230px"></span><br>
+      so that <span class="blank" style="min-width:270px"></span><br>
+      can <span class="blank" style="min-width:300px"></span>
+    </p>
+  </div>
+
+  <h2><span class="n">6</span>Three futures — an abbreviated Odyssey Plan</h2>
+  <div class="hint">Hold all three in parallel. Do not rank them. In quality-diversity terms this is an
+  archive of elites, and keeping the archive diverse is what makes the search find the good solution.</div>
+  <div class="three">
+    <div class="card"><b>A · What you're already doing</b><div class="lines"><div></div><div></div><div></div><div></div></div></div>
+    <div class="card"><b>B · If that vanished tomorrow</b><div class="hint" style="font-size:11px;margin:0">Your subfield gets solved, defunded, or automated.</div><div class="lines"><div></div><div></div><div></div></div></div>
+    <div class="card"><b>C · If money and other people's opinion were no object</b><div class="lines"><div></div><div></div><div></div><div></div></div></div>
+  </div>
+  <p class="hint" style="margin-top:7px">If you only say one of these out loud, say <strong>C</strong>. It's the one nobody says.</p>
+
+  <h2><span class="n">7</span>Your compass — take an hour on these, separately</h2>
+  <div class="hint"><strong>Workview</strong> (~250 words): what is work <em>for</em>? Not what job you want.
+  What defines worthwhile work? What does money have to do with it?<br>
+  <strong>Lifeview</strong> (~250 words): what is a life for? What is the relationship between you and others?
+  What is the role of joy, sorrow, love, strife?<br>
+  <strong>Then read them side by side.</strong> Where do they clash? The compass is the <em>coherence</em>,
+  not either document alone.</div>
+
+  <h2><span class="n">8</span>When to pivot</h2>
+  <div class="box">
+    <p style="margin:0"><strong>Not when you're unhappy.</strong> Happiness is a noisy, slow, confounded signal.</p>
+    <p style="margin:6px 0 0">Leave when your <strong>rate of improvement</strong> falls to the average rate available
+    to you elsewhere. That's Charnov's marginal value theorem, 1976 — and note it's the <em>derivative</em>, not the level.
+    Counterintuitively: <strong>the richer the environment, the sooner you should leave.</strong></p>
+    <p style="margin:6px 0 0">And when you go, <strong>take your parts with you.</strong> Across 58,000 startups,
+    what separated eventual success from stagnation was <em>reuse</em> — the people who made it discarded less
+    between attempts. Thrashing looks exactly like pivoting decisively.</p>
+  </div>
+
+  <h2><span class="n">9</span>If you read four things</h2>
+  <ul class="refs">
+    <li><strong>Liu, Dehmamy, Chown, Giles &amp; Wang (2021)</strong> — hot streaks are preceded by exploration
+      <em>then</em> exploitation. Neither half works alone. <em>Nature Communications</em> 12:5392 ·
+      <a href="https://doi.org/10.1038/s41467-021-25477-8">doi.org/10.1038/s41467-021-25477-8</a></li>
+    <li><strong>Lazer &amp; Friedman (2007)</strong> — densely connected groups converge fast on worse answers.
+      <em>Admin. Science Quarterly</em> 52(4) · <a href="https://doi.org/10.2189/asqu.52.4.667">doi.org/10.2189/asqu.52.4.667</a></li>
+    <li><strong>Casciaro, Gino &amp; Kouchaki (2014)</strong> — instrumental networking makes people feel dirty,
+      and it's worse the less power you have. <em>ASQ</em> 59(4) ·
+      <a href="https://doi.org/10.1177/0001839214554990">doi.org/10.1177/0001839214554990</a></li>
+    <li><strong>Stanley &amp; Lehman (2015)</strong> — <em>Why Greatness Cannot Be Planned</em>. On serendipity,
+      stepping stones, and why objectives deceive. Springer ·
+      <a href="https://doi.org/10.1007/978-3-319-15524-1">doi.org/10.1007/978-3-319-15524-1</a></li>
+  </ul>
+
+  <div class="foot">The slides, and all six simulations, are a single HTML file — open it offline and drag the
+  sliders yourself. &nbsp;·&nbsp; Anything the room invented in the niche-construction brainstorm goes to the
+  ISAL board.</div>
+</div>
+
+</body></html>

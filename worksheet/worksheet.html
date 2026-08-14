@@ -3,73 +3,116 @@
 <style>
 /* Print-first. People write on this, so it is ink-light and high-contrast —
    the deck's dark theme would be unusable on paper and wasteful to print. */
-@page{size:letter;margin:14mm 14mm 12mm}
+@page{size:letter;margin:10mm 13mm 9mm}
 *{box-sizing:border-box}
-body{margin:0;font:14px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+body{margin:0;font:13.4px/1.38 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   color:#14161C;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{padding:0;page-break-after:always}
 .page:last-child{page-break-after:auto}
-h1{font-size:27px;line-height:1.1;margin:0 0 4px;letter-spacing:-.02em}
+h1{font-size:23px;line-height:1.1;margin:0 0 3px;letter-spacing:-.02em}
 .sub{font:600 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;
-  text-transform:uppercase;color:#7A8291;margin-bottom:16px}
-h2{font-size:16px;margin:20px 0 6px;letter-spacing:-.01em}
+  text-transform:uppercase;color:#7A8291;margin-bottom:6px}
+h2{font-size:15.5px;margin:6px 0 4px;letter-spacing:-.01em}
 h2 .n{display:inline-block;width:22px;height:22px;border-radius:11px;background:#14161C;color:#fff;
   font:700 12px/22px ui-monospace,monospace;text-align:center;margin-right:8px;vertical-align:2px}
 p{margin:0 0 8px;max-width:62em}
-.hint{font-size:12.5px;color:#5C6470;margin-bottom:8px}
+.hint{font-size:11.8px;color:#5C6470;margin-bottom:6px}
 .rule{height:1px;background:#D8DCE3;margin:14px 0}
 
-table{border-collapse:collapse;width:100%;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin-top:4px}
 th{font:700 10.5px/1.2 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
-  color:#7A8291;text-align:left;padding:0 6px 5px 0;border-bottom:1.5px solid #14161C}
+  color:#7A8291;text-align:left;padding:0 6px 4px 0;border-bottom:1.5px solid #14161C}
 /* Vertical rules matter here: people write in these cells, and without them the
    engagement and energy columns are invisible on paper. */
 td{border-bottom:1px solid #C9CFD8;border-right:1px solid #E2E6EC;
-  height:30px;padding:2px 6px 2px 0;font-size:13px;color:#5C6470}
+  height:24px;padding:2px 6px 2px 0;font-size:13px;color:#5C6470}
 td:last-child{border-right:none}
 th{border-right:1px solid #E2E6EC}
 th:last-child{border-right:none}
 .scale{font:600 11px/1 ui-monospace,monospace;color:#9AA2AE;letter-spacing:.06em}
 
 .gauges{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
-.gauge{border:1.5px solid #14161C;border-radius:6px;padding:9px 10px}
+.gauge{border:1.5px solid #14161C;border-radius:6px;padding:6px 10px}
 .gauge b{font-size:13px;letter-spacing:.02em}
-.gauge .bar{margin-top:7px;height:15px;border:1.5px solid #9AA2AE;border-radius:3px;
+.gauge .bar{margin-top:6px;height:12px;border:1.5px solid #9AA2AE;border-radius:3px;
   background:repeating-linear-gradient(90deg,#EDEFF3 0 2px,transparent 2px 25%)}
 .gauge .ends{display:flex;justify-content:space-between;font:600 9.5px/1.4 ui-monospace,monospace;color:#9AA2AE}
 
 .aeiou{margin-top:4px}
-.aeiou div{display:flex;gap:9px;align-items:baseline;margin:7px 0}
+.aeiou div{display:flex;gap:9px;align-items:baseline;margin:3px 0}
 .aeiou .k{font:800 15px/1 ui-monospace,monospace;width:16px;flex:none}
 /* fixed column so every write-on rule starts at the same x */
-.aeiou .q{font-size:13px;width:215px;flex:none}
-.aeiou .line{flex:1;border-bottom:1px solid #C9CFD8;height:19px}
+.aeiou .q{font-size:12.5px;width:265px;flex:none}
+.aeiou .line{flex:1;border-bottom:1px solid #C9CFD8;height:15px}
 
-.box{border:1.5px solid #14161C;border-radius:6px;padding:11px 13px;margin-top:8px}
+.box{border:1.5px solid #14161C;border-radius:6px;padding:8px 11px;margin-top:6px;line-height:1.36}
 .box.hi{border-width:2.5px;background:#FFFBEC}
 .blank{border-bottom:1.5px solid #14161C;display:inline-block;min-width:150px}
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:8px}
-.three .card{border:1.5px solid #14161C;border-radius:6px;padding:9px 10px;min-height:112px}
-.three .card b{font-size:12.5px;display:block;margin-bottom:5px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:7px}
+.three .card{border:1.5px solid #14161C;border-radius:6px;padding:7px 9px;min-height:90px}
+.three .card b{font-size:12px;display:block;margin-bottom:3px}
 .three .card .lines{margin-top:5px}
-.lines div{border-bottom:1px solid #C9CFD8;height:19px}
+.lines div{border-bottom:1px solid #C9CFD8;height:17px}
 
-.refs{font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:#5C6470}
+/* The agent layer. Violet = the swarm-model frame (you are a boid with two sensor
+   channels); graphite = the DYL frame. Two frames, two inks. */
+.agent{color:#4343C4}
+.chan{display:inline-block;font:700 9px/1 ui-monospace,monospace;letter-spacing:.13em;
+  text-transform:uppercase;color:#4343C4;border:1.2px solid #4343C4;border-radius:9px;
+  padding:2.5px 7px 2px;margin-left:8px;vertical-align:3px}
+.aframe{font-size:11px;color:#4343C4;margin:2px 0 4px}
+.head{display:grid;grid-template-columns:1.06fr .94fr;gap:15px;align-items:start;margin-bottom:2px}
+.dialcol{display:grid;gap:6px}
+.dialcap{font-size:10px;line-height:1.3;color:#7A8291}
+.wv2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dial{border:1.5px solid #4343C4;border-radius:6px;padding:6px 9px 4px}
+.dial>b{font:700 10.5px/1 ui-monospace,monospace;letter-spacing:.1em;color:#4343C4}
+.dial .desc{font-size:11px;color:#5C6470;margin-top:3px}
+.dial .track{position:relative;height:14px;margin-top:5px}
+.dial .track .line{position:absolute;left:0;right:0;top:6px;height:1.5px;background:#14161C}
+.dial .track .detent{position:absolute;left:50%;top:1px;width:1.5px;height:11px;background:#4343C4}
+.dial .ends{display:flex;justify-content:space-between;font:600 9.5px/1.4 ui-monospace,monospace;color:#9AA2AE}
+.dial .fate{display:flex;justify-content:space-between;gap:10px;font-size:9.5px;color:#7A8291;margin-top:1px}
+.dial .fate span:last-child{text-align:right}
+
+.refs{font:10.6px/1.33 ui-monospace,SFMono-Regular,Menlo,monospace;color:#5C6470}
 .refs a{color:#1B4FD8;text-decoration:none}
-.refs li{margin:4px 0}
-.foot{margin-top:16px;padding-top:9px;border-top:1px solid #D8DCE3;font-size:11.5px;color:#7A8291}
-.warn{background:#FFF3F3;border-left:3px solid #C4363C;padding:8px 11px;font-size:12.5px;margin-top:8px}
+.refs li{margin:1px 0}
+.foot{margin-top:6px;padding-top:6px;border-top:1px solid #D8DCE3;font-size:10.5px;line-height:1.4;color:#7A8291}
+.warn{background:#FFF3F3;border-left:3px solid #C4363C;padding:6px 10px;font-size:11.5px;margin-top:6px}
 </style></head><body>
 
 <div class="page">
-  <h1>You Are the Agent</h1>
-  <div class="sub">ERA Minicon 2026 · Alyssa Adams · bring this, or a napkin</div>
+  <div class="head">
+    <div>
+      <h1>You Are the Agent</h1>
+      <div class="sub">ERA Minicon 2026 · Alyssa Adams · bring this, or a napkin</div>
+      <p style="margin:0;font-size:12.6px"><strong>This is not a careers worksheet.</strong> A career is one
+      of four gauges. Everything here is adapted from <em>Designing Your Life</em> (Burnett &amp; Evans) —
+      a design-school heuristic with a million readers and, honestly, no controlled trial. Use it because
+      the structure is interesting. <span class="agent">And play it as the agent from the talk's opening sim:
+      one particle, two dials — outward sensing and inward sensing — swimming in a mixture you only partly
+      chose. Each violet tag names the channel an exercise reads.</span></p>
+    </div>
+    <div class="dialcol">
+      <div class="dial"><b>OUTWARD REACH</b>
+        <div class="desc">How far you sense other people's field.</div>
+        <div class="track"><div class="line"></div><div class="detent"></div></div>
+        <div class="ends"><span>BLIND</span><span>EVERYONE</span></div>
+        <div class="fate"><span>walks off alone, never comes back</span><span>burrows in and stays</span></div>
+      </div>
+      <div class="dial"><b>INWARD GAIN</b>
+        <div class="desc">How loudly you hear your own pace.</div>
+        <div class="track"><div class="line"></div><div class="detent"></div></div>
+        <div class="ends"><span>NUMB</span><span>DEAFENING</span></div>
+        <div class="fate"><span>the crowd sets your pace</span><span>right in principle, wanders</span></div>
+      </div>
+      <div class="dialcap">Mark an <strong>×</strong> per track — today's setting, not the ideal one.
+      The notch is the detent; these dials are live on slide 3.</div>
+    </div>
+  </div>
 
-  <p><strong>This is not a careers worksheet.</strong> A career is one of four gauges. Everything here is
-  adapted from <em>Designing Your Life</em> (Burnett &amp; Evans) — a design-school heuristic with a million
-  readers and, honestly, no controlled trial. Use it because the structure is interesting.</p>
-
-  <h2><span class="n">1</span>Life dashboard — where are you actually?</h2>
+  <h2><span class="n">1</span>Life dashboard — where are you actually? <span class="chan">inward</span></h2>
   <div class="hint">Fill each gauge from empty to full. Don't overthink it; the first instinct is the data.</div>
   <div class="gauges">
     <div class="gauge"><b>Health</b><div class="bar"></div><div class="ends"><span>EMPTY</span><span>FULL</span></div></div>
@@ -78,9 +121,10 @@ th:last-child{border-right:none}
     <div class="gauge"><b>Love</b><div class="bar"></div><div class="ends"><span>EMPTY</span><span>FULL</span></div></div>
   </div>
 
-  <h2><span class="n">2</span>Good Time Journal — five activities from last week</h2>
+  <h2><span class="n">2</span>Good Time Journal — five activities from last week <span class="chan">inward + memory</span></h2>
   <div class="hint">Real ones, with names. <strong>Engagement and energy are different axes</strong> — you can be
-  completely absorbed and completely drained, and that combination is the most useful row on this page.</div>
+  completely absorbed and completely drained, and that combination is the most useful row on this page.
+  <span class="agent">One row is a scalar; five rows side by side are a gradient — the bacterium's trick, on paper.</span></div>
   <table>
     <tr>
       <th style="width:52%">Activity</th>
@@ -95,7 +139,8 @@ th:last-child{border-right:none}
     <tr><td></td><td></td><td></td><td></td></tr>
   </table>
 
-  <h2><span class="n">3</span>AEIOU — on your highest-engagement row</h2>
+  <h2><span class="n">3</span>AEIOU — on your highest-engagement row <span class="chan">outward</span></h2>
+  <div class="aframe">Outward sensors, pointed at the moment the inward channel spiked: what was inside your radius?</div>
   <div class="aeiou">
     <div><span class="k">A</span><span class="q">Activities — what were you <em>doing</em>?</span><span class="line"></span></div>
     <div><span class="k">E</span><span class="q">Environments — where, and how did it feel?</span><span class="line"></span></div>
@@ -104,40 +149,44 @@ th:last-child{border-right:none}
     <div><span class="k">U</span><span class="q">Users — who else, helping or hindering?</span><span class="line"></span></div>
   </div>
 
-  <h2><span class="n">4</span>The question this whole exercise exists for</h2>
+  <h2><span class="n">4</span>The question this whole exercise exists for <span class="chan">both channels</span></h2>
   <div class="box hi">
     <p style="margin:0"><strong>Find your lowest-energy activity. Who chose it?</strong></p>
-    <div style="border-bottom:1.5px solid #14161C;height:26px;margin-top:9px"></div>
+    <div style="border-bottom:1.5px solid #14161C;height:16px;margin-top:5px"></div>
+    <div class="aframe" style="margin:3px 0 0">Work the visible field rewards and the inward channel reads empty — the starving flock, in your handwriting.</div>
   </div>
 
   <div class="warn"><strong>An honest caveat.</strong> You just did this retrospectively, and retrospective
   recall of how things felt is biased — peak-end effects, mood-congruent recall, duration neglect. That is an
   argument for running the real version prospectively for two or three weeks. Not against the exercise.</div>
 
-  <div class="foot">Good Time Journal &amp; AEIOU: <em>Designing Your Life</em> ch. 3. Official worksheets are free at
-  designingyour.life/worksheets-and-discussion-questions. AEIOU is not a DYL invention — it is an
-  ethnographic field-observation framework from design research (Doblin Group, c. 1991), turned around to
-  observe yourself.</div>
+  <div class="foot">Good Time Journal &amp; AEIOU: <em>Designing Your Life</em> ch. 3 (official worksheets:
+  designingyour.life). AEIOU is not a DYL invention — it is an ethnographic field-observation framework from
+  design research (Doblin Group, c. 1991), turned around to observe yourself.</div>
 </div>
 
 <div class="page">
   <h1>Take it home</h1>
   <div class="sub">the parts that need more than seven minutes</div>
 
-  <h2><span class="n">5</span>The translation drill</h2>
+  <h2><span class="n">5</span>The translation drill <span class="chan">emission</span></h2>
   <div class="hint">One sentence. No jargon. It has to survive being repeated by a hiring manager to their boss.
-  You are not translating a <em>label</em> — you are naming a <em>method</em>.</div>
+  You are not translating a <em>label</em> — you are naming a <em>method</em>.
+  <span class="agent">Other agents only sense what crosses into their radius; this sentence is what you emit.</span></div>
   <div class="box">
-    <p style="font-size:15px;line-height:2.1;margin:0">
+    <p style="font-size:14px;line-height:1.7;margin:0">
       I build / study <span class="blank" style="min-width:230px"></span><br>
       so that <span class="blank" style="min-width:270px"></span><br>
       can <span class="blank" style="min-width:300px"></span>
     </p>
   </div>
 
-  <h2><span class="n">6</span>Three futures — an abbreviated Odyssey Plan</h2>
+  <h2><span class="n">6</span>Three futures — an abbreviated Odyssey Plan <span class="chan">three mixtures</span></h2>
   <div class="hint">Hold all three in parallel. Do not rank them. In quality-diversity terms this is an
   archive of elites, and keeping the archive diverse is what makes the search find the good solution.</div>
+  <div class="aframe">In the talk, one recipe ends as membrane, nucleus, or scattered — only the mixture
+  differs. These cards are three mixtures for the same you: hold your parameters constant, let the mixture
+  do the work.</div>
   <div class="three">
     <div class="card"><b>A · What you're already doing</b><div class="lines"><div></div><div></div><div></div><div></div></div></div>
     <div class="card"><b>B · If that vanished tomorrow</b><div class="hint" style="font-size:11px;margin:0">Your subfield gets solved, defunded, or automated.</div><div class="lines"><div></div><div></div><div></div></div></div>
@@ -145,21 +194,25 @@ th:last-child{border-right:none}
   </div>
   <p class="hint" style="margin-top:7px">If you only say one of these out loud, say <strong>C</strong>. It's the one nobody says.</p>
 
-  <h2><span class="n">7</span>Your compass — take an hour on these, separately</h2>
-  <div class="hint"><strong>Workview</strong> (~250 words): what is work <em>for</em>? Not what job you want.
-  What defines worthwhile work? What does money have to do with it?<br>
-  <strong>Lifeview</strong> (~250 words): what is a life for? What is the relationship between you and others?
-  What is the role of joy, sorrow, love, strife?<br>
-  <strong>Then read them side by side.</strong> Where do they clash? The compass is the <em>coherence</em>,
-  not either document alone.</div>
+  <h2><span class="n">7</span>Your compass — take an hour on these, separately <span class="chan">your recipe</span></h2>
+  <div class="wv2">
+    <div class="hint" style="margin:0"><strong>Workview</strong> (~250 words): what is work <em>for</em>?
+    Not what job you want. What defines worthwhile work? What does money have to do with it?</div>
+    <div class="hint" style="margin:0"><strong>Lifeview</strong> (~250 words): what is a life for? What is
+    the relationship between you and others? What is the role of joy, sorrow, love, strife?</div>
+  </div>
+  <div class="hint" style="margin:5px 0 0"><strong>Then read them side by side.</strong> Where do they clash?
+  The compass is the <em>coherence</em>, not either document alone.
+  <span class="agent">This pair is your recipe — the steering numbers everything else swims by.</span></div>
 
-  <h2><span class="n">8</span>When to pivot</h2>
-  <div class="box">
+  <h2><span class="n">8</span>When to pivot <span class="chan">inward · derivative</span></h2>
+  <div class="aframe">The inward channel again, in derivative mode — read the rate, never the level.</div>
+  <div class="box" style="font-size:12.8px">
     <p style="margin:0"><strong>Not when you're unhappy.</strong> Happiness is a noisy, slow, confounded signal.</p>
-    <p style="margin:6px 0 0">Leave when your <strong>rate of improvement</strong> falls to the average rate available
+    <p style="margin:4px 0 0">Leave when your <strong>rate of improvement</strong> falls to the average rate available
     to you elsewhere. That's Charnov's marginal value theorem, 1976 — and note it's the <em>derivative</em>, not the level.
     Counterintuitively: <strong>the richer the environment, the sooner you should leave.</strong></p>
-    <p style="margin:6px 0 0">And when you go, <strong>take your parts with you.</strong> Across 58,000 startups,
+    <p style="margin:4px 0 0">And when you go, <strong>take your parts with you.</strong> Across 58,000 startups,
     what separated eventual success from stagnation was <em>reuse</em> — the people who made it discarded less
     between attempts. Thrashing looks exactly like pivoting decisively.</p>
   </div>
@@ -179,9 +232,9 @@ th:last-child{border-right:none}
       <a href="https://doi.org/10.1007/978-3-319-15524-1">doi.org/10.1007/978-3-319-15524-1</a></li>
   </ul>
 
-  <div class="foot">The slides, and all six simulations, are a single HTML file — open it offline and drag the
-  sliders yourself. &nbsp;·&nbsp; Anything the room invented in the niche-construction brainstorm goes to the
-  ISAL board.</div>
+  <div class="foot">The slides and all eight simulations are one HTML file — open it offline and drag the
+  sliders; your two dials from page 1 are live controls on slide 3. &nbsp;·&nbsp; Anything the room invented
+  in the niche-construction brainstorm goes to the ISAL board.</div>
 </div>
 
 </body></html>

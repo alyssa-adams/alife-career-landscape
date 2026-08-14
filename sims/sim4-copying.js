@@ -199,8 +199,8 @@
         // Drives the RIGHT panel only; the left stays a locked sparse reference
         // so the comparison can never invert live. Clamped at 3 so the "dense"
         // side can never accidentally become sparser than the "sparse" side.
-        { type: 'slider', key: 'k', label: 'CONNECTIVITY', lo: 'SPARSE', hi: 'EVERYONE',
-          min: 3, max: 59, step: 1, value: 59,
+        { type: 'slider', key: 'k', label: 'CONNECTIVITY (RIGHT PANEL)', lo: 'SPARSE', hi: 'EVERYONE',
+          min: 3, max: 59, step: 1, value: 59, red: true,
           onChange: function (v, api) { api.state.rebuildAdj = true; } },
         { type: 'button', label: 'RESET ⟲', onClick: function (api, ctrl) { ctrl.hardReset(); } }
       ],
@@ -248,9 +248,11 @@
         };
 
         st.readout = function () {
+          // notes print the slider's scope where the eye already is: the left
+          // ring is locked; only the right panel's degree is driveable
           return [
-            { x: PX0, w: PW, title: 'SPARSE', color: '#8A8AFF', value: '' },
-            { x: PX1, w: PW, title: 'CONNECTED', color: '#FF5C68', value: '' }
+            { x: PX0, w: PW, title: 'SPARSE', color: '#8A8AFF', value: '', note: 'RING · LOCKED' },
+            { x: PX1, w: PW, title: 'CONNECTED', color: '#FF5C68', value: '', note: 'DEGREE = THE SLIDER' }
           ];
         };
       },

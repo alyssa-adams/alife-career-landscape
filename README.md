@@ -66,7 +66,7 @@ node build.js            # deck/ + sims/  →  slides.html (byte-identical)
 node test/sc-smoke.js    # swarm port physics gates: parse counts, boundedness,
                          # no-NaN, cohesion, determinism — plain node, no browser
 node test/sc0b-sweep.js  # the four slider fates on slide 3, over 8 seeds
-node test/sc3-search.js  # the slide-21 pairing classifier, 16 seeds per pairing
+node test/sc3-search.js  # the slide-20 pairing classifier, 16 seeds per pairing
 ```
 
 Sources: slide content in `deck/slides.js`, engine in `deck/deck.js`, styles
@@ -79,7 +79,7 @@ Sources: slide content in `deck/slides.js`, engine in `deck/deck.js`, styles
   [simulator & recipes](https://bingweb.binghamton.edu/~sayama/SwarmChemistry/).
   The port in `sims/sim0-swarm.js` derives from his GPLv3 simulator and is
   **GPLv3** accordingly, with provenance notes in the file header.
-- **Picbreeder specimens** (slide 6) — rendered from the original CPPN genomes
+- **Picbreeder specimens** (slide 7) — rendered from the original CPPN genomes
   at [picbreeder.net](https://picbreeder.net/), verified against the archived
   site and Secretan et al. (2011). Images © UCF Research Foundation,
   non-commercial licence; credited on-slide by evolver username.

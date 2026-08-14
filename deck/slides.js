@@ -8,7 +8,7 @@
    Claims the research could NOT verify are marked and are not asserted.
 
    STRUCTURE — read this before editing.
-   The presented path is slides 1–36. Everything after D.appendix() is BACKUP:
+   The presented path is slides 1–35. Everything after D.appendix() is BACKUP:
    material that lost the 7 August red-team pass. It still ships, because the
    file is the artifact 550 people read afterwards, and because "jump to the
    slide that answers the question" beats "let me explain" during Q&A.
@@ -16,7 +16,7 @@
    THE 9 AUGUST VISUAL PASS (fleet-reviewed) — the rules it left behind:
    · One headline per slide, aimed at <= 8 words, plus AT MOST one element
      (a number, a quote, a diagram, a table <= 4 rows, a mock UI, or nothing).
-   · The argument lives in facilitation_script.md and in her mouth. If a
+   · The argument lives in speaker_notes.md and in her mouth. If a
      sentence is about to be spoken, it is not also printed.
    · Kickers are LABELS ("Section 4", "Field notes"), never sentences.
    THE 10 AUGUST PASS: the talk now opens inside its frame — two live
@@ -108,7 +108,29 @@
     '<a href="https://designingyour.life/worksheets-and-discussion-questions/">designingyour.life/worksheets</a></div>'
   );
 
-  // 6 — Picbreeder: THE REAL SPECIMENS (10 Aug), rendered at print quality
+  // 6 — the two guides, joined at their common ground (10 Aug: reframed off
+  // "Stanley vs DYL" — the fight framing is retired; what they share is
+  // serendipity, and the compass disagreement is spoken as a nuance, not
+  // printed as a versus)
+  D.add(
+    '<div class="kicker">Two guides</div>' +
+    '<h2>Both books run on <span class="am">serendipity.</span></h2>' +
+    '<div class="cols" style="margin-top:14px;align-items:stretch">' +
+    '<div class="card" style="text-align:center;padding:34px 24px;display:flex;flex-direction:column">' +
+    '<div class="am" style="font-family:var(--display);font-size:58px;font-weight:600;line-height:1.06;min-height:126px;display:flex;align-items:center;justify-content:center">TREASURE<br>HUNTER</div>' +
+    '<p class="mut" style="font:600 15px/1.7 var(--mono);margin:20px 0 0;max-width:none">STANLEY &amp; LEHMAN · 2015<br>CH. 4: "THE FALSE COMPASS"</p></div>' +
+    '<div class="card" style="text-align:center;padding:34px 24px;display:flex;flex-direction:column">' +
+    '<div class="cy" style="font-family:var(--display);font-size:58px;font-weight:600;line-height:1.06;min-height:126px;display:flex;align-items:center;justify-content:center">COMPASS</div>' +
+    '<p class="mut" style="font:600 15px/1.7 var(--mono);margin:20px 0 0;max-width:none">BURNETT &amp; EVANS · 2016<br>THEY CALL IT "WAYFINDING"</p></div></div>' +
+    '<div class="src">Stanley &amp; Lehman, <em>Why Greatness Cannot Be Planned</em>, Springer 2015 · <a href="https://doi.org/10.1007/978-3-319-15524-1">doi.org/10.1007/978-3-319-15524-1</a> ' +
+    '&nbsp;·&nbsp; Burnett &amp; Evans, <em>Designing Your Life</em>, Knopf 2016, ISBN 978-1-101-87532-2 ' +
+    '&nbsp;·&nbsp; Stanley telling his own career non-objectively: <em>Cross Roads #42</em>, Cross Labs AI, 14 Mar 2024 — I hosted it · ' +
+    '<a href="https://www.youtube.com/watch?v=73svHfR3eo8">youtube.com/watch?v=73svHfR3eo8</a> · ' +
+    '"the alternative to the objective path is the path of the interesting" (26:46) ' +
+    '<span class="flag">· quote is from auto-captions — check it against the audio before speaking it</span></div>'
+  );
+
+  // 7 — Picbreeder: THE REAL SPECIMENS (10 Aug), rendered at print quality
   // from the original CPPN genomes and verified three ways (archived-site
   // pixel correlation >= 0.98, exact genome stats vs Secretan et al. fig. 13,
   // the site's own parent records). The face->car pair sits adjacent so the
@@ -133,72 +155,14 @@
     '<span class="flag">· two different users, per the site\'s own record: acampbel published the face; Stanley branched it — the eyes became the wheels. Skull = the objective-search-fails specimen (Woolley &amp; Stanley 2011); car = the serendipity one. Images © UCF Research Foundation, non-commercial licence.</span></div>'
   );
 
-  // 7 — the two guides, joined at their common ground (10 Aug: reframed off
-  // "Stanley vs DYL" — the fight framing is retired; what they share is
-  // serendipity, and the compass disagreement is spoken as a nuance, not
-  // printed as a versus)
-  D.add(
-    '<div class="kicker">Two guides</div>' +
-    '<h2>Both books run on <span class="am">serendipity.</span></h2>' +
-    '<div class="cols" style="margin-top:14px;align-items:stretch">' +
-    '<div class="card" style="text-align:center;padding:34px 24px;display:flex;flex-direction:column">' +
-    '<div class="am" style="font-family:var(--display);font-size:58px;font-weight:600;line-height:1.06;min-height:126px;display:flex;align-items:center;justify-content:center">TREASURE<br>HUNTER</div>' +
-    '<p class="mut" style="font:600 15px/1.7 var(--mono);margin:20px 0 0;max-width:none">STANLEY &amp; LEHMAN · 2015<br>CH. 4: "THE FALSE COMPASS"</p></div>' +
-    '<div class="card" style="text-align:center;padding:34px 24px;display:flex;flex-direction:column">' +
-    '<div class="cy" style="font-family:var(--display);font-size:58px;font-weight:600;line-height:1.06;min-height:126px;display:flex;align-items:center;justify-content:center">COMPASS</div>' +
-    '<p class="mut" style="font:600 15px/1.7 var(--mono);margin:20px 0 0;max-width:none">BURNETT &amp; EVANS · 2016<br>THEY CALL IT "WAYFINDING"</p></div></div>' +
-    '<div class="src">Stanley &amp; Lehman, <em>Why Greatness Cannot Be Planned</em>, Springer 2015 · <a href="https://doi.org/10.1007/978-3-319-15524-1">doi.org/10.1007/978-3-319-15524-1</a> ' +
-    '&nbsp;·&nbsp; Burnett &amp; Evans, <em>Designing Your Life</em>, Knopf 2016, ISBN 978-1-101-87532-2 ' +
-    '&nbsp;·&nbsp; Stanley telling his own career non-objectively: <em>Cross Roads #42</em>, Cross Labs AI, 14 Mar 2024 — I hosted it · ' +
-    '<a href="https://www.youtube.com/watch?v=73svHfR3eo8">youtube.com/watch?v=73svHfR3eo8</a> · ' +
-    '"the alternative to the objective path is the path of the interesting" (26:46) ' +
-    '<span class="flag">· quote is from auto-captions — check it against the audio before speaking it</span></div>'
-  );
+  /* ---------- SECTION 1 · two kinds of sensing ------------------------- */
 
-  /* ---------- SECTION 1 --------------------------------------------------- */
-
-  // 8 — SIM 1 (carries the section opening itself)
-  D.addSim({
-    act: 'Section 1 · the environment is non-stationary',
-    title: 'The ground is moving — partly because you moved.',
-    make: window.makeSim1,
-    src: 'Moving-peaks-style non-stationary optimisation: Branke (1999) <em>CEC</em> · ' +
-         '<a href="https://doi.org/10.1109/CEC.1999.785502">doi.org/10.1109/CEC.1999.785502</a> &nbsp;·&nbsp; ' +
-         'crowding term after McPherson &amp; Ranger-Moore, "Evolution on a Dancing Landscape," ' +
-         '<em>Social Forces</em> 70(1), 1991 · <a href="https://doi.org/10.2307/2580060">doi.org/10.2307/2580060</a>'
-  });
-
-  // 9 — the beat after the sim
-  D.add(
-    '<h2 class="big">Nobody made a mistake.</h2>' +
-    '<p class="lead mut" style="margin-top:18px">Every stranded agent is still at a local maximum.</p>'
-  );
-
-  // 10 — the receipt: the peak moved  (funding detail lives in .src + backup)
-  D.add(
-    '<h2>The peak really did move.</h2>' +
-    '<div class="cols" style="margin-top:16px">' +
-    '<div class="card"><h3 class="cy">Google DeepMind · 2024</h3>' +
-    '<p>Position paper: open-endedness is <em>essential</em> for superhuman AI.</p></div>' +
-    '<div class="card"><h3 class="cy">Sakana AI · 2026</h3>' +
-    '<p>Three artificial-life releases in four months — one cites <em>the book</em> by name.</p></div></div>' +
-    '<div class="src">Hughes et al. (2024) arXiv:2406.04268 · <a href="https://arxiv.org/abs/2406.04268">arxiv.org/abs/2406.04268</a> ' +
-    '<span class="flag">— cites the journal <em>Artificial Life</em> four times and concedes ALife\'s subjectivity critique by name</span> · ' +
-    '<a href="https://sakana.ai/digital-ecosystem/">sakana.ai/digital-ecosystem</a> · <a href="https://sakana.ai/smart-cellular-bricks/">smart-cellular-bricks</a> · ' +
-    '<a href="https://sakana.ai/picbreeder-ai/">picbreeder-ai</a> · Stanley\'s own latest is an <em>ALife</em> paper: <a href="https://arxiv.org/abs/2607.02954">arXiv:2607.02954</a>, 3 Jul 2026 ' +
-    '&nbsp;·&nbsp; US funding: <strong>proposed</strong> −56.9% vs <strong>enacted</strong> −3.4%; GRFP 2,600→1,500→2,500, second-years excluded; ' +
-    '29% of non-US physics PhDs left within six months (AIP). Full table: backup 39. ' +
-    '<span class="flag">· proposed, enacted and enjoined are three different things</span></div>'
-  );
-
-  /* ---------- SECTION 2 --------------------------------------------------- */
-
-  // 11 — two kinds of sensing, as two round particles (10 Aug: the boid
+  // 8 — two kinds of sensing, as two round particles (10 Aug: the boid
   // triangles became flat discs to match the sims' new particle style; the
   // gold halo fills became stroke rings — no glows anywhere in this deck).
   // Violet lines to the neighbours ARE "a vector"; tight gold rings = inward.
   D.add(
-    '<div class="act">Section 2</div>' +
+    '<div class="act">Section 1</div>' +
     '<h2>Two kinds of sensing.</h2>' +
     '<svg class="diag" viewBox="0 0 1050 250" width="1050" height="250">' +
     '<circle cx="250" cy="100" r="86" fill="none" stroke="#8A8AFF" stroke-width="2" stroke-dasharray="5 8" opacity=".55"/>' +
@@ -218,17 +182,21 @@
     '<text x="800" y="240" text-anchor="middle">YOURSELF · A SCALAR</text></svg>'
   );
 
-  // 12 — SIM 2 (its title is the act's punchline; say the rest over it)
+  // 9 — SIM 2 (its title is the act's punchline; say the rest over it)
   D.addSim({
-    act: 'Section 2 · the visible field and the true one',
+    act: 'Section 1 · the visible field and the true one',
     title: 'Everything they can see says they\'re winning.',
     make: window.makeSim2,
+    legend: '<span class="sw" style="background:#8A8AFF"></span>WORLD-ONLY ' +
+            '<span class="sw" style="background:#FF5C68"></span>SELF-ONLY, SEES NO ONE ' +
+            '<span class="sw" style="background:#FFD24A"></span>BOTH <span class="sep">·</span> ' +
+            'BOTTOM BARS = AVG FELT ENERGY PER FLOCK',
     src: 'Boids: Reynolds (1987) "Flocks, Herds, and Schools," <em>SIGGRAPH</em> 21(4):25–34 · <a href="https://doi.org/10.1145/37401.37406">doi</a> — ' +
          'flocking is exteroception here, so the red interoception-only population cannot flock · ' +
          'run-and-tumble chemotaxis as the inner mechanism · interoception vs exteroception: Sherrington (1906).'
   });
 
-  // 13 — Stanley's scope condition, as two quote cards
+  // 10 — Stanley's scope condition, as two quote cards
   D.add(
     '<div class="kicker">The scope condition</div>' +
     '<h2>Stanley draws the line himself.</h2>' +
@@ -241,20 +209,50 @@
     '<div class="src">Full transcript · <a href="https://jimruttshow.blubrry.net/the-jim-rutt-show-transcripts/transcript-of-episode-130-ken-stanley-on-why-greatness-cannot-be-planned/">jimruttshow.blubrry.net — EP130</a></div>'
   );
 
-  // 14 — the honesty slide, as two numbers (BEFORE the MAP-Elites payoff:
-  // disarm the objection, then let the act end on the delight, not the caveat)
+
+  /* ---------- SECTION 2 · the ground moves — and the real-world receipts - */
+
+  // 11 — SIM 1 (carries the section opening itself)
+  D.addSim({
+    act: 'Section 2 · the environment is non-stationary',
+    title: 'The ground is moving — partly because you moved.',
+    make: window.makeSim1,
+    legend: '<span class="sw" style="background:#8A8AFF"></span>CLIMBERS ' +
+            '<span class="sw" style="background:#FFD24A"></span>EXPLORERS ' +
+            '<span class="sw" style="background:#6E7080"></span>STRANDED — OUT OF FUEL, CAN REVIVE ' +
+            '<span class="dash"></span>GROUND AT START <span class="sep">·</span> ' +
+            'X WHAT YOU WORK ON <span class="sep">·</span> Y HOW WELL IT GOES',
+    src: 'Moving-peaks-style non-stationary optimisation: Branke (1999) <em>CEC</em> · ' +
+         '<a href="https://doi.org/10.1109/CEC.1999.785502">doi.org/10.1109/CEC.1999.785502</a> &nbsp;·&nbsp; ' +
+         'crowding term after McPherson &amp; Ranger-Moore, "Evolution on a Dancing Landscape," ' +
+         '<em>Social Forces</em> 70(1), 1991 · <a href="https://doi.org/10.2307/2580060">doi.org/10.2307/2580060</a>'
+  });
+
+  // 12 — the beat after the sim
   D.add(
-    '<div class="kicker">The evidence base</div>' +
-    '<div class="chips" style="margin-top:34px">' +
-    '<div class="chip" style="padding:30px 22px"><div class="v" style="font-size:76px">1,000,000+</div><div class="c">READERS</div></div>' +
-    '<div class="chip" style="padding:30px 22px"><div class="v mg" style="font-size:76px">0</div><div class="c">CONTROLLED TRIALS</div></div></div>' +
-    '<div class="src">Zero RCTs, zero quasi-experimental studies, zero pre–post evaluations of the DYL curriculum. ' +
-    'The academic "life design" literature (Savickas et al. 2009, <em>J. Vocational Behavior</em> 75(3) · <a href="https://doi.org/10.1016/j.jvb.2009.04.004">doi</a>) is a different framework sharing the name &nbsp;·&nbsp; ' +
-    'career interventions do work modestly: Whiston et al. (2017) · <a href="https://doi.org/10.1016/j.jvb.2017.03.010">doi</a> &nbsp;·&nbsp; ' +
-    'design-thinking critique: Micheli et al. (2019) · <a href="https://doi.org/10.1111/jpim.12466">doi</a></div>'
+    '<h2 class="big">Nobody made a mistake.</h2>' +
+    '<p class="lead mut" style="margin-top:18px">Every stranded agent is still at a local maximum.</p>'
   );
 
-  // 15 — the resolution, as the mapping table (Act 2 ends on the payoff)
+  // 13 — the receipt: the peak moved  (funding detail lives in .src + backup)
+  D.add(
+    '<h2>The peak really did move.</h2>' +
+    '<div class="cols" style="margin-top:16px">' +
+    '<div class="card"><h3 class="cy">Google DeepMind · 2024</h3>' +
+    '<p>Position paper: open-endedness is <em>essential</em> for superhuman AI.</p></div>' +
+    '<div class="card"><h3 class="cy">Sakana AI · 2026</h3>' +
+    '<p>Three artificial-life releases in four months — one cites <em>the book</em> by name.</p></div></div>' +
+    '<div class="src">Hughes et al. (2024) arXiv:2406.04268 · <a href="https://arxiv.org/abs/2406.04268">arxiv.org/abs/2406.04268</a> ' +
+    '<span class="flag">— cites the journal <em>Artificial Life</em> four times and concedes ALife\'s subjectivity critique by name</span> · ' +
+    '<a href="https://sakana.ai/digital-ecosystem/">sakana.ai/digital-ecosystem</a> · <a href="https://sakana.ai/smart-cellular-bricks/">smart-cellular-bricks</a> · ' +
+    '<a href="https://sakana.ai/picbreeder-ai/">picbreeder-ai</a> · Stanley\'s own latest is an <em>ALife</em> paper: <a href="https://arxiv.org/abs/2607.02954">arXiv:2607.02954</a>, 3 Jul 2026 ' +
+    '&nbsp;·&nbsp; US funding: <strong>proposed</strong> −56.9% vs <strong>enacted</strong> −3.4%; GRFP 2,600→1,500→2,500, second-years excluded; ' +
+    '29% of non-US physics PhDs left within six months (AIP). Full table: backup 39. ' +
+    '<span class="flag">· proposed, enacted and enjoined are three different things</span></div>'
+  );
+
+
+  // 14 — the resolution, as the mapping table (Act 2 ends on the payoff)
   D.add(
     '<h2>Designing Your Life is <span class="am">MAP-Elites.</span></h2>' +
     '<table style="margin-top:16px"><tr><th>Quality-Diversity</th><th>Designing Your Life</th></tr>' +
@@ -270,22 +268,26 @@
 
   /* ---------- ACTIVITY A2 ------------------------------------------------- */
 
-  // 16 — DELIBERATELY BLANK (10 Aug): she is rethinking this activity slot.
-  // TBD placeholders only — the old Good Time Journal quadrant is preserved
-  // in slides.js.bak-38substrate if it comes back. NOTE: slides 17–19 still
-  // assume a "five activities, engagement × energy" prompt happened here;
-  // whatever replaces this must feed them or they go too.
+  // 15 — A2 opener, redesigned 14 Aug as a LIVE CO-DESIGN: the room decides
+  // the instrument together, then runs it. The entry frame (traces → reward)
+  // is printed; the three design decisions are made in chat; the prompt gets
+  // pasted and the timer runs on this slide. Pocket defaults (the old Good
+  // Time Journal prompt) live in the speaker notes in case chat stalls —
+  // slides 16–17 still assume "a scored list of recent activities" came out
+  // of this, so steer the axes toward engagement-and-energy-shaped choices.
   D.add(
-    '<div class="act">Your turn · TBD</div>' +
-    '<h2 style="color:var(--faint)">TBD</h2>' +
-    '<div class="cols-3" style="margin-top:22px">' +
-    '<div class="card" style="min-height:130px;display:flex;align-items:center;justify-content:center"><span style="font:600 15px var(--mono);letter-spacing:.1em;color:var(--faint)">TBD · PROMPT</span></div>' +
-    '<div class="card" style="min-height:130px;display:flex;align-items:center;justify-content:center"><span style="font:600 15px var(--mono);letter-spacing:.1em;color:var(--faint)">TBD · TIMER</span></div>' +
-    '<div class="card" style="min-height:130px;display:flex;align-items:center;justify-content:center"><span style="font:600 15px var(--mono);letter-spacing:.1em;color:var(--faint)">TBD · CHAT FORMAT</span></div></div>',
+    '<div class="act">Your turn · we design this instrument together</div>' +
+    '<h2>Your reward function — inferred<br>from what you actually <span class="am">did.</span></h2>' +
+    '<div class="cols-3" style="margin-top:16px">' +
+    '<div class="card"><h3 class="cy" style="font-size:21px">1 · THE TRACE</h3><p class="mut" style="font-size:19px">Which slice of recent behaviour do we sample?</p></div>' +
+    '<div class="card"><h3 class="cy" style="font-size:21px">2 · THE AXES</h3><p class="mut" style="font-size:19px">What two scores does every item get?</p></div>' +
+    '<div class="card"><h3 class="cy" style="font-size:21px">3 · THE PROBE</h3><p class="mut" style="font-size:19px">One question we ask of the worst row.</p></div></div>' +
+    '<div class="chat" style="margin-top:12px">In chat: propose · 👍 what you like · I paste the winning design, then the timer runs.</div>' +
+    '<div class="timer" data-secs="135" style="font-size:60px;margin-top:10px">2:15</div>',
     'activity'
   );
 
-  // 17 — AEIOU: five letters, five nouns
+  // 16 — AEIOU: five letters, five nouns
   D.add(
     '<div class="act">AEIOU · your highest-engagement activity</div>' +
     '<div class="step"><div class="n" style="font-size:42px">A</div><div class="t" style="font-size:29px">Activities</div></div>' +
@@ -299,7 +301,7 @@
     'activity'
   );
 
-  // 18 — the question this act exists for
+  // 17 — the question this act exists for
   D.add(
     '<p class="lead mut">Now find your <span class="mg">lowest-energy</span> activity.</p>' +
     '<h2 class="huge am" style="margin-top:22px">Who chose it?</h2>' +
@@ -307,7 +309,7 @@
     'activity'
   );
 
-  // 19 — the debrief, one line
+  // 18 — the debrief, one line
   D.add(
     '<h2 class="big">You just did inverse RL<br>on yourself.</h2>' +
     '<div style="display:grid;grid-template-columns:76px 210px 58px 210px;font:600 19px/2.1 var(--mono);letter-spacing:.05em;margin-top:30px;color:var(--dim)">' +
@@ -317,12 +319,12 @@
 
   /* ---------- SECTION 3 --------------------------------------------------- */
 
-  // 20 — the section divider that is a claim. The negation ("you are not
+  // 19 — the section divider that is a claim. The negation ("you are not
   // underqualified") is SPOKEN as you land here — printing both halves was the
   // exact negate-then-assert machinery this deck no longer prints.
   D.add('<div class="act">Section 3</div><h1>You are in the<br>wrong environment.</h1>');
 
-  // 21 — SIM 3, now real Swarm Chemistry (10 Aug): the same hero recipe
+  // 20 — SIM 3, now real Swarm Chemistry (10 Aug): the same hero recipe
   // dropped into three different ambient mixtures. "Recipe" is Sayama's own
   // word for the parameter list, which is why the title can use it honestly.
   D.addSim({
@@ -336,7 +338,7 @@
          '<span class="flag">· the pairings are ours, unanimous over 16 seeds each — RESHUFFLE reruns it live</span>'
   });
 
-  // 22 — the market, as one number over the ghost of a vocabulary
+  // 21 — the market, as one number over the ghost of a vocabulary
   D.add(
     '<div class="kicker">22 employers · every live posting · 2026-08-07</div>' +
     '<h2 class="huge am" style="margin:10px 0 24px">2,400 jobs. Zero.</h2>' +
@@ -348,7 +350,7 @@
     '<span class="flag">· re-run the morning of the talk if you want the numbers exact</span></div>'
   );
 
-  // 23 — the one title on earth, as the team page itself
+  // 22 — the one title on earth, as the team page itself
   D.add(
     '<h2>One job title says <span class="am">"Open-endedness."</span></h2>' +
     '<div class="roster">' +
@@ -359,7 +361,7 @@
     '<a href="https://www.kenstanley.net/home">kenstanley.net</a> · both verified 2026-08-07 — the title was written for the person, not the role</div>'
   );
 
-  // 24 — the translation table, AFTER Lila: zero, the one exception, then
+  // 23 — the translation table, AFTER Lila: zero, the one exception, then
   // the mechanism. Ends the act right before the drill that uses it.
   D.add(
     '<h2>What the postings call it.</h2>' +
@@ -378,7 +380,7 @@
 
   /* ---------- ACTIVITY A3 ------------------------------------------------- */
 
-  // 25 — the translation drill
+  // 24 — the translation drill
   D.add(
     '<div class="act">Your turn · 6 minutes · we read these out</div>' +
     '<div class="chat" style="font-size:30px;max-width:none;line-height:1.6">I build / study ______<br>so that ______<br>can ______</div>' +
@@ -389,19 +391,29 @@
 
   /* ---------- SECTION 4 --------------------------------------------------- */
 
-  // 26 — SIM 4 (carries the section opening itself)
+  // 25 — SIM 4 (carries the section opening itself)
   D.addSim({
     act: 'Section 4 · other agents are your environment',
     title: 'One difference: who can see whom.',
+    // printed bridge (14 Aug): lands the jump from the translation drill —
+    // A3 made each method legible; this section is what a community of
+    // mutually-legible methods does to itself
+    sub: 'You just made your method legible. Here\'s a community where everyone can read everyone\'s.',
     make: window.makeSim4,
     readout: true,
+    overlay: [
+      { x: 44,   y: 584, text: 'AVG QUALITY', rot: true },
+      { x: 1220, y: 686, text: 'TIME → 20 S', anchor: 'right' },
+      { x: 62,   y: 474, text: 'DIVERSITY — HOW SPREAD OUT', anchor: 'left' },
+      { x: 682,  y: 474, text: 'DIVERSITY', anchor: 'left' }
+    ],
     src: 'Lazer &amp; Friedman (2007), <em>Administrative Science Quarterly</em> 52(4):667–694 · ' +
          '<a href="https://doi.org/10.2189/asqu.52.4.667">doi.org/10.2189/asqu.52.4.667</a> &nbsp;·&nbsp; ' +
          'rule verbatim from the authors\' own poster: <a href="http://allan.friedmans.org/papers/tortoisehare_poster.pdf">tortoisehare_poster.pdf</a> ' +
          '<span class="flag">· lines are the mean of 16 replicates; bands are the full spread</span>'
   });
 
-  // 27 — the real finding, as the curve it is (10 Aug: axis labels moved to
+  // 26 — the real finding, as the curve it is (10 Aug: axis labels moved to
   // swarm vocabulary; the data is Derex's human groups, so "subgroups" — the
   // authors' own unit — stays on the annotation)
   D.add(
@@ -422,7 +434,7 @@
     '<span class="flag">· the copying result reverses under conformity (Barkoczi &amp; Galesic 2016) — say this if asked</span></div>'
   );
 
-  // 28 — SIM 4b: niche construction (the Casciaro chain moved to the backup
+  // 27 — SIM 4b: niche construction (the Casciaro chain moved to the backup
   // deck — its line is now spoken over this sim: "the grubby feeling is
   // measured, and it's self-reinforcing — build something and let the
   // network be a by-product")
@@ -437,7 +449,7 @@
 
   /* ---------- ACTIVITY A4 (unchanged) ------------------------------------- */
 
-  // 29 — the workshop (the emotional peak; the timer is the hero)
+  // 28 — the workshop (the emotional peak; the timer is the hero)
   D.add(
     '<div class="act">Your turn · 5 minutes</div>' +
     '<h2 class="big">What niche does this community need<br>that doesn\'t exist yet?</h2>' +
@@ -447,7 +459,7 @@
     'activity'
   );
 
-  // 30 — the payoff, as the number
+  // 29 — the payoff, as the number
   D.add(
     '<div class="am" style="font-family:var(--display);font-size:280px;line-height:1;font-weight:600;letter-spacing:-.015em;font-variant-numeric:tabular-nums">550</div>' +
     '<p class="lead" style="margin-top:10px">of you raised the ground under this community.</p>' +
@@ -456,18 +468,29 @@
 
   /* ---------- SECTION 5 --------------------------------------------------- */
 
-  // 31 — SIM 5 (carries the section opening itself)
+  // 30 — SIM 5 (carries the section opening itself)
   D.addSim({
     act: 'Section 5 · explore, exploit, and when to pivot',
     title: 'The ground moves at fifteen seconds.',
+    // printed bridge (14 Aug): hands off from 550/niche construction — the
+    // community raises the ground; the commit decision stays individual
+    sub: 'Raising the ground was the community\'s move. When to commit is only yours.',
     make: window.makeSim5,
     readout: true,
+    // axis names live ON the plot now (positioned HTML, not canvas text);
+    // the readout notes carry the per-panel temperature policy
+    overlay: [
+      { x: 27,   y: 566, text: 'AVG QUALITY', rot: true },
+      { x: 1229, y: 682, text: 'TIME → 30 S', anchor: 'right' },
+      { x: 648,  y: 480, text: 'SHIFT · 15 S', anchor: 'left' },
+      { x: 1239, y: 452, text: 'MEAN OF 16 RUNS · BAND ±1 S.D.', anchor: 'right' }
+    ],
     src: 'Metropolis acceptance = simulated annealing: Kirkpatrick, Gelatt &amp; Vecchi (1983) <em>Science</em> 220(4598):671–680 · ' +
          '<a href="https://doi.org/10.1126/science.220.4598.671">doi</a> ' +
          '<span class="flag">· lines are the mean of 16 replicates, bands ±1 s.d. · press PIVOT RULE for the fourth strategy</span>'
   });
 
-  // 32 — the pivot rule, as the crossing it is (immediately after SIM 5:
+  // 31 — the pivot rule, as the crossing it is (immediately after SIM 5:
   // the PIVOT RULE button's payoff, named while the demo is still warm)
   D.add(
     '<h2>Leave when your <span class="am">learning rate</span> crosses the average.</h2>' +
@@ -487,7 +510,7 @@
     'already an algorithm: Oudeyer, Kaplan &amp; Hafner (2007), Intelligent Adaptive Curiosity, rewards <em>learning progress</em> · <a href="https://inria.hal.science/hal-00793610">inria.hal.science</a></div>'
   );
 
-  // 33 — the hot-streak result, as three lifts (the human data confirming
+  // 32 — the hot-streak result, as three lifts (the human data confirming
   // the mechanism the sim and the rule just showed)
   D.add(
     '<div class="kicker">≈26,000 careers · artists, film directors, scientists</div>' +
@@ -502,7 +525,7 @@
     'no peak age — hot streaks land uniformly at random across a career; John Fenn\'s ended in a Nobel at 85: Liu et al. (2018) <em>Nature</em> 559:396–399 · <a href="https://doi.org/10.1038/s41586-018-0315-8">doi</a></div>'
   );
 
-  // 34 — field notes, one row of ventures. (10 Aug: the Maven card is GONE —
+  // 33 — field notes, one row of ventures. (10 Aug: the Maven card is GONE —
   // Alyssa was not involved in Maven at all; it was Stanley's company and its
   // presence on her ventures row read as hers. Do not restore it here.)
   D.add(
@@ -517,10 +540,10 @@
     '<span class="flag">· the three ventures are from memory, not a registry — details as I remember them</span></div>'
     // production reminder (kept OFF the slide, 10 Aug red-team catch): before
     // the talk Alyssa still confirms dates + her role at each venture, and
-    // Veda's HQ + acquisition date — see facilitation_script.md "before the day"
+    // Veda's HQ + acquisition date — see speaker_notes.md "before the day"
   );
 
-  // 35 — the two caveats, as the authors' own words. (10 Aug: the concept
+  // 34 — the two caveats, as the authors' own words. (10 Aug: the concept
   // word is now "margin" — "slack" read as the app to anyone under 40.)
   D.add(
     '<h2>Non-objective search has a prerequisite: <span class="am">margin.</span></h2>' +
@@ -536,7 +559,7 @@
     '<span class="flag">· an argument for building margin into a community — not for telling people to be braver</span></div>'
   );
 
-  // 36 — routes that exist right now (BEFORE the thesis: slack names the
+  // 35 — routes that exist right now (BEFORE the thesis: slack names the
   // problem, routes hand over material help, the thesis closes the idea)
   D.add(
     '<div class="kicker">Verified 7 August</div>' +
@@ -573,6 +596,20 @@
     '<h1>The rest<br>of the argument.</h1>' +
     '<p class="lead mut">Cut for time, not for doubt. Every one of these answers a question<br>somebody in this room is about to ask.</p>' +
     '<p class="mut" style="font-size:21px;margin-top:20px">Press <strong>g</strong>, a number, <strong>Enter</strong> to jump.</p>'
+  );
+
+  // backup 37 — the DYL honesty slide (zero trials), moved off the live path
+  // 14 Aug; its line is now spoken over the MAP-Elites slide. Parked FIRST in
+  // the backup so every later backup keeps the number the Q&A map already uses.
+  D.add(
+    '<div class="kicker">Backup · the DYL evidence base, if anyone asks</div>' +
+    '<div class="chips" style="margin-top:34px">' +
+    '<div class="chip" style="padding:30px 22px"><div class="v" style="font-size:76px">1,000,000+</div><div class="c">READERS</div></div>' +
+    '<div class="chip" style="padding:30px 22px"><div class="v mg" style="font-size:76px">0</div><div class="c">CONTROLLED TRIALS</div></div></div>' +
+    '<div class="src">Zero RCTs, zero quasi-experimental studies, zero pre–post evaluations of the DYL curriculum. ' +
+    'The academic "life design" literature (Savickas et al. 2009, <em>J. Vocational Behavior</em> 75(3) · <a href="https://doi.org/10.1016/j.jvb.2009.04.004">doi</a>) is a different framework sharing the name &nbsp;·&nbsp; ' +
+    'career interventions do work modestly: Whiston et al. (2017) · <a href="https://doi.org/10.1016/j.jvb.2017.03.010">doi</a> &nbsp;·&nbsp; ' +
+    'design-thinking critique: Micheli et al. (2019) · <a href="https://doi.org/10.1111/jpim.12466">doi</a></div>'
   );
 
   D.add(
@@ -640,8 +677,8 @@
     '<tr><td><span class="am">Evaluating systems with no ground truth</span></td><td><span class="am">the bottleneck problem in AI right now</span></td></tr></table>' +
     '<p class="mut" style="font-size:22px;margin-top:14px">ALife is the only community that has spent thirty-five years asking ' +
     '<em>how do you tell if something interesting happened when there\'s no score?</em></p>' +
-    '<div class="src">Each right-hand cell is sourced elsewhere in this deck: the live-postings audit, 2026-08-07 (slides 22 &amp; 24) · ' +
-    'DeepMind &amp; Sakana releases (slide 10) · the no-ground-truth bottleneck: the eval-team postings quoted verbatim on slide 24</div>',
+    '<div class="src">Each right-hand cell is sourced elsewhere in this deck: the live-postings audit, 2026-08-07 (slides 21 &amp; 23) · ' +
+    'DeepMind &amp; Sakana releases (slide 13) · the no-ground-truth bottleneck: the eval-team postings quoted verbatim on slide 23</div>',
     'pad-tight'
   );
 

@@ -21,7 +21,11 @@
   var slides = [], idx = 0, goBuf = '', mainCount = null;
 
   // Space a sim slide has after its act line, title, controls and source line.
-  var MAX_SIM_W = 1180, MAX_SIM_H = 404, RO_H = 54;
+  // LEG_H: the one-line HTML legend strip under a sim canvas (14 Aug) — text
+  // stays out of the canvas per SimKit rule 7, so the legend buys its space
+  // from the canvas the same way the readout strip does. SUB_H: the printed
+  // one-line bridge under a sim title (same day, same rule).
+  var MAX_SIM_W = 1180, MAX_SIM_H = 404, RO_H = 54, LEG_H = 32, SUB_H = 30;
 
   function fit() {
     var s = Math.min(global.innerWidth / 1280, global.innerHeight / 720);
@@ -153,8 +157,11 @@
       var d = el(
         (opts.act ? '<div class="act">' + opts.act + '</div>' : '') +
         (opts.title ? '<div class="simcap">' + opts.title + '</div>' : '') +
+        (opts.sub ? '<div class="simsub">' + opts.sub + '</div>' : '') +
         '<div class="simwrap"><div class="readout"></div>' +
-        '<div class="simbox"><canvas></canvas></div><div class="mount"></div></div>' +
+        '<div class="simbox"><canvas></canvas></div>' +
+        (opts.legend ? '<div class="simlegend">' + opts.legend + '</div>' : '') +
+        '<div class="mount"></div></div>' +
         (opts.src ? '<div class="src">' + opts.src + '</div>' : '')
       );
       d.className += ' simslide';
@@ -178,12 +185,31 @@
         // zero width at the slide's centre, and the labels marched off the edge.
         var hasReadout = !!opts.readout;
         var natW = ctrl.api.W, natH = ctrl.api.H;
-        var avail = MAX_SIM_H - (hasReadout ? RO_H : 0);
+        var avail = MAX_SIM_H - (hasReadout ? RO_H : 0) - (opts.legend ? LEG_H : 0) -
+                    (opts.sub ? SUB_H : 0);
         var scale = Math.min(MAX_SIM_W / natW, avail / natH, 1);
         var box = d.querySelector('.simbox');
         box.style.width = (natW * scale) + 'px';
         box.style.height = (natH * scale) + 'px';
         cv.style.transform = 'scale(' + scale + ')';
+
+        // Positioned HTML labels ON the canvas (axis names, in-plot tags):
+        // coordinates are the sim's own canvas space, scaled here once.
+        if (opts.overlay) {
+          var ov = document.createElement('div');
+          ov.className = 'simoverlay';
+          opts.overlay.forEach(function (o) {
+            var sp = document.createElement('span');
+            sp.innerHTML = o.text;
+            sp.style.left = (o.x * scale) + 'px';
+            sp.style.top = (o.y * scale) + 'px';
+            var tx = o.anchor === 'left' ? '0' : (o.anchor === 'right' ? '-100%' : '-50%');
+            sp.style.transform = 'translate(' + tx + ',-50%)' + (o.rot ? ' rotate(-90deg)' : '');
+            if (o.color) sp.style.color = o.color;
+            ov.appendChild(sp);
+          });
+          box.appendChild(ov);
+        }
 
         // Only the sims that publish labels get vertical space for them, and
         // the strip is aligned to the canvas so the per-panel offsets land right.
@@ -199,7 +225,8 @@
           ro.innerHTML = cells.map(function (c) {
             return '<div class="ro-cell" style="width:' + (c.w * scale) + 'px;left:' + (c.x * scale) + 'px"><div class="ro-title" style="color:' +
               (c.color || '#F1F1F5') + '">' + c.title + '</div>' +
-              (c.value ? '<div class="ro-value">' + c.value + '</div>' : '') + '</div>';
+              (c.value ? '<div class="ro-value">' + c.value + '</div>' : '') +
+              (c.note ? '<div class="ro-note">' + c.note + '</div>' : '') + '</div>';
           }).join('');
         })();
       });

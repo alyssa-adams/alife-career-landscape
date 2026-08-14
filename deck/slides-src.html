@@ -174,7 +174,7 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
   display:block}
 .simlabel{display:flex;gap:0;width:100%;justify-content:space-between;
   font:700 17px/1 var(--mono);letter-spacing:.13em}
-.sim-controls{display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:center;
+.sim-controls{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;
   position:relative}  /* paint above the sim well's drop shadow, or it eats button top borders */
 .sim-slider{display:flex;align-items:center;gap:9px}
 .sim-lab{font:500 15px/1 var(--mono);letter-spacing:.13em;color:var(--dim)}
@@ -191,6 +191,27 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
 .ro-title{font:700 16px/1.3 var(--mono);letter-spacing:.12em;white-space:nowrap}
 .ro-value{font-family:var(--display);font-weight:600;font-size:26px;
   line-height:1.2;color:var(--ink);font-variant-numeric:tabular-nums}
+.ro-note{font:500 12px/1.3 var(--mono);letter-spacing:.08em;color:var(--faint)}
+/* one-line HTML legend under a sim canvas (14 Aug) — SimKit rule 7 keeps all
+   text out of the canvas, so grey/dashed/axis semantics get named here */
+.simlegend{font:500 12.5px/1.4 var(--mono);letter-spacing:.08em;color:var(--dim);
+  text-transform:uppercase;text-align:center;max-width:1180px;white-space:nowrap}
+.simlegend .sw{display:inline-block;width:10px;height:10px;border-radius:5px;
+  vertical-align:-1px;margin:0 7px 0 16px}
+.simlegend .sw:first-child{margin-left:0}
+.simlegend .sep{color:var(--faint);margin:0 9px}
+.simlegend .dash{display:inline-block;width:24px;height:0;margin:0 7px 0 16px;
+  border-top:2px dashed rgba(241,241,245,.45);vertical-align:3px}
+.sim-slider.world input[type=range]{accent-color:#9CA0B2}  /* world-level knobs */
+.sim-slider.red input[type=range]{accent-color:#FF5C68}    /* red-population knobs */
+/* one-line printed bridge under a sim title (14 Aug) — connects the sim to the
+   slide(s) before it without waiting for the spoken track */
+.simsub{font-size:19px;line-height:1.35;color:var(--dim);margin-top:2px}
+/* HTML labels positioned ON the canvas (axis names, in-plot tags) — SimKit
+   rule 7 keeps text out of the canvas itself, so these ride above it */
+.simoverlay{position:absolute;inset:0;pointer-events:none;z-index:2}
+.simoverlay span{position:absolute;font:600 10px/1 var(--mono);letter-spacing:.12em;
+  color:#9CA0B2;text-transform:uppercase;white-space:nowrap}
 
 /* activity slides */
 .slide.activity{background:

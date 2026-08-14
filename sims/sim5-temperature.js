@@ -130,8 +130,10 @@
       seed: P.SEED,
 
       controls: [
-        { type: 'slider', key: 'cool', label: 'COOLING', lo: 'FAST', hi: 'SLOW',
-          min: 6, max: 30, step: 0.5, value: P.ANNEAL_SECS },
+        // gold:true + scope in the label — this slider drives ONLY the gold
+        // (anneal) panel; HOT and COLD run fixed temperatures by definition.
+        { type: 'slider', key: 'cool', label: 'COOLING (GOLD PANEL)', lo: 'FAST', hi: 'SLOW',
+          min: 6, max: 30, step: 0.5, value: P.ANNEAL_SECS, gold: true },
         { type: 'button', label: 'PIVOT RULE', onClick: function (api, ctrl) {
             pivotMode = !pivotMode; ctrl.hardReset();
           } },
@@ -189,8 +191,12 @@
         st.frozen = false;
 
         st.readout = function () {
+          // note = temperature policy per panel, so the slider's scope is
+          // printed where the eye already is (labels live in HTML, rule 7)
+          var notes = ['T FIXED · HIGH', 'T FIXED · LOW', 'T COOLS (SLIDER)'];
           return P.POPS.map(function (pp, k) {
-            return { x: PGAP + k * (PAN + PGAP), w: PAN, title: pp.label, color: pp.color, value: '' };
+            return { x: PGAP + k * (PAN + PGAP), w: PAN, title: pp.label, color: pp.color,
+                     value: '', note: notes[k] };
           });
         };
 

@@ -337,8 +337,11 @@
           // narrow: opt-in 112px rail (vs 170px) for slides whose controls
           // row would otherwise wrap onto the .src footnote (see SIM 2).
           // gold: inward/interoception sliders — the accent colour is semantic.
+          // world: knobs that reshape the WORLD, not one population — neutral
+          // grey, so a slider never wears a flock's colour it doesn't control.
           wrap.className = 'sim-slider' + (c.narrow ? ' narrow' : '') +
-                           (c.gold ? ' gold' : '');
+                           (c.gold ? ' gold' : '') + (c.world ? ' world' : '') +
+                           (c.red ? ' red' : '');
           wrap.innerHTML =
             '<span class="sim-lab">' + c.label + '</span>' +
             '<span class="sim-end">' + (c.lo || '') + '</span>';

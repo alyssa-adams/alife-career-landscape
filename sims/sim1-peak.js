@@ -137,11 +137,13 @@
       seed: P.SEED,
 
       controls: [
+        // world:true — both knobs reshape the terrain, not one population;
+        // a violet slider next to violet climbers read as "climbers only"
         { type: 'slider', key: 'rate', label: 'CHANGE RATE', lo: 'SLOW', hi: 'FAST',
-          min: 0.15, max: 3.0, step: 0.01, value: 1.0,
+          min: 0.15, max: 3.0, step: 0.01, value: 1.0, world: true,
           detent: 1.0, detentEps: 0.05 },   // always snap back to the rehearsed run
         { type: 'slider', key: 'crowding', label: 'CROWDING', lo: 'OFF', hi: 'STRONG',
-          min: 0, max: 1, step: 0.01, value: 0.6 },
+          min: 0, max: 1, step: 0.01, value: 0.6, world: true },
         { type: 'button', label: 'RESET ⟲', onClick: function (api, ctrl) { ctrl.hardReset(); } }
       ],
 

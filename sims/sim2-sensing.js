@@ -218,12 +218,17 @@
         // row — a wrapped controls row lands on the .src footnote, and the
         // audit cannot see it (sim slides are exempt from the under-footnote
         // guard). Endpoint words lowercase to match SIM 0b's row.
-        { type: 'slider', key: 'rho', label: 'FIELDS', lo: 'decoupled', hi: 'aligned',
-          min: 0, max: 1, step: 0.01, value: 0.0, narrow: true,
+        // Scope is now IN the labels (14 Aug): FIELDS reshapes the WORLD —
+        // it rewrites the true field under all three flocks — while INNER
+        // SENSE steers the GOLD flock only (violet and red have beta pinned
+        // at 0 and 1). The world slider is grey on purpose: it must not wear
+        // any flock's colour.
+        { type: 'slider', key: 'rho', label: 'WORLD FIELDS', lo: 'apart', hi: 'aligned',
+          min: 0, max: 1, step: 0.01, value: 0.0, narrow: true, world: true,
           onChange: function (v, api) { api.state.rebuildH = true; } },
-        { type: 'slider', key: 'beta', label: 'INNER SENSE', lo: 'none', hi: 'only',
+        { type: 'slider', key: 'beta', label: 'GOLD INNER SENSE', lo: 'none', hi: 'only',
           min: 0, max: 1, step: 0.01, value: 0.45, narrow: true, gold: true },
-        { type: 'button', label: 'REVEAL', onClick: function () { revealed = !revealed; } },
+        { type: 'button', label: 'TRUE FIELD', onClick: function () { revealed = !revealed; } },
         { type: 'button', label: 'RESET ⟲', onClick: function (api, ctrl) {
             revealed = false; ctrl.hardReset();
           } }

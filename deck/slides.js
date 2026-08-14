@@ -87,6 +87,7 @@
 
   // 5 — not a careers talk: the four gauges, drawn as gauges
   D.add(
+    '<div class="wsref">Worksheet <b>p1 · q1</b> <i>now</i></div>' +
     '<div class="kicker">Designing Your Life · the first instrument</div>' +
     '<h2>A career is a subsystem of a life.</h2>' +
     '<svg class="diag" viewBox="0 0 1000 240" width="1000" height="240">' +
@@ -113,6 +114,7 @@
   // serendipity, and the compass disagreement is spoken as a nuance, not
   // printed as a versus)
   D.add(
+    '<div class="wsref later">Worksheet <b>p2 · q7</b> <i>take home</i></div>' +
     '<div class="kicker">Two guides</div>' +
     '<h2>Both books run on <span class="am">serendipity.</span></h2>' +
     '<div class="cols" style="margin-top:14px;align-items:stretch">' +
@@ -254,6 +256,7 @@
 
   // 14 — the resolution, as the mapping table (Act 2 ends on the payoff)
   D.add(
+    '<div class="wsref later">Worksheet <b>p2 · q6</b> <i>take home</i></div>' +
     '<h2>Designing Your Life is <span class="am">MAP-Elites.</span></h2>' +
     '<table style="margin-top:16px"><tr><th>Quality-Diversity</th><th>Designing Your Life</th></tr>' +
     '<tr><td>Local quality criterion</td><td>Workview / Lifeview</td></tr>' +
@@ -276,6 +279,7 @@
   // slides 16–17 still assume "a scored list of recent activities" came out
   // of this, so steer the axes toward engagement-and-energy-shaped choices.
   D.add(
+    '<div class="wsref">Worksheet <b>p1 · q2</b> <i>now</i></div>' +
     '<div class="act">Your turn · we design this instrument together</div>' +
     '<h2>Your reward function — inferred<br>from what you actually <span class="am">did.</span></h2>' +
     '<div class="cols-3" style="margin-top:16px">' +
@@ -289,6 +293,7 @@
 
   // 16 — AEIOU: five letters, five nouns
   D.add(
+    '<div class="wsref">Worksheet <b>p1 · q3</b> <i>now</i></div>' +
     '<div class="act">AEIOU · your highest-engagement activity</div>' +
     '<div class="step"><div class="n" style="font-size:42px">A</div><div class="t" style="font-size:29px">Activities</div></div>' +
     '<div class="step"><div class="n" style="font-size:42px">E</div><div class="t" style="font-size:29px">Environments</div></div>' +
@@ -303,6 +308,7 @@
 
   // 17 — the question this act exists for
   D.add(
+    '<div class="wsref">Worksheet <b>p1 · q4</b> <i>now</i></div>' +
     '<p class="lead mut">Now find your <span class="mg">lowest-energy</span> activity.</p>' +
     '<h2 class="huge am" style="margin-top:22px">Who chose it?</h2>' +
     '<div class="chat">In chat: &nbsp;one word</div>',
@@ -382,6 +388,7 @@
 
   // 24 — the translation drill
   D.add(
+    '<div class="wsref">Worksheet <b>p2 · q5</b> <i>now — flip over</i></div>' +
     '<div class="act">Your turn · 6 minutes · we read these out</div>' +
     '<div class="chat" style="font-size:30px;max-width:none;line-height:1.6">I build / study ______<br>so that ______<br>can ______</div>' +
     '<p class="mut" style="font-size:21px;margin-top:16px">It must survive a hiring manager repeating it to their boss.</p>' +
@@ -496,6 +503,7 @@
   // 31 — the pivot rule, as the crossing it is (immediately after SIM 5:
   // the PIVOT RULE button's payoff, named while the demo is still warm)
   D.add(
+    '<div class="wsref later">Worksheet <b>p2 · q8</b> <i>take home</i></div>' +
     '<h2>Leave when your <span class="am">learning rate</span> crosses the average.</h2>' +
     '<svg class="diag" viewBox="0 0 900 300" width="900" height="300" style="margin-top:14px">' +
     '<line x1="70" y1="266" x2="850" y2="266" stroke="#232330" stroke-width="3"/>' +
@@ -583,6 +591,7 @@
   // 35 — routes that exist right now (BEFORE the thesis: slack names the
   // problem, routes hand over material help, the thesis closes the idea)
   D.add(
+    '<div class="wsref later">Worksheet <b>p2 · q9</b> <i>take home</i></div>' +
     '<div class="kicker">Verified 7 August</div>' +
     '<h2>One opens <span class="am">the day after this conference starts.</span></h2>' +
     '<table style="margin-top:10px"><tr><th>Route</th><th>What it is</th></tr>' +

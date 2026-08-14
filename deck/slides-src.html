@@ -136,6 +136,19 @@ ul.take li{font-family:var(--display);font-weight:400;font-size:29px;
 .chip .c{font:500 14px/1.5 var(--mono);text-transform:uppercase;
   color:var(--faint);letter-spacing:.16em;margin-top:8px}
 
+/* worksheet cross-reference. Every slide that drives a numbered worksheet
+   question names it in the same corner, in the same shape, so nobody has to
+   ask "which box am I in?" mid-timer. Amber NOW = fill it during the talk;
+   dim TAKE HOME = page 2, later. Top-right is the only corner nothing else
+   uses (kicker top-left, .src and the HUD along the bottom). */
+.wsref{position:absolute;right:68px;top:50px;z-index:3;display:flex;
+  align-items:center;gap:11px;font:700 13px/1 var(--mono);letter-spacing:.15em;
+  text-transform:uppercase;color:var(--faint);background:var(--surface);
+  border:1px solid var(--rulehi);border-radius:999px;padding:10px 15px}
+.wsref b{color:var(--ink);font-weight:700;letter-spacing:.13em}
+.wsref i{font-style:normal;color:var(--amber)}
+.wsref.later i{color:var(--dim)}
+
 /* orderings table (slide 32): a result about *sequence* has to be shown as a
    sequence. Two slots per row = the two halves; a row wins only when both are
    filled, in that order. Row colours match SIM 5's three panels on purpose. */

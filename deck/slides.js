@@ -513,16 +513,34 @@
     'already an algorithm: Oudeyer, Kaplan &amp; Hafner (2007), Intelligent Adaptive Curiosity, rewards <em>learning progress</em> · <a href="https://inria.hal.science/hal-00793610">inria.hal.science</a></div>'
   );
 
-  // 32 — the hot-streak result, as three lifts (the human data confirming
-  // the mechanism the sim and the rule just showed)
+  // 32 — the hot-streak result, as three orderings (the human data confirming
+  // the mechanism the sim and the rule just showed).
+  // (14 Aug: this slide used to print "the only ordering with positive lift;
+  // either half alone does worse than chance" and expect the room to parse it
+  // in the two seconds it was up. Nobody can — Alyssa couldn't, and she wrote
+  // the deck. It is now the table that sentence was compressing, colour-matched
+  // to SIM 5's three panels: violet explores forever, red exploits forever,
+  // gold does one and then the other. Do not compress it back into prose.)
   D.add(
     '<div class="kicker">≈26,000 careers · artists, film directors, scientists</div>' +
     '<h2>Explore first. Then commit.</h2>' +
-    '<div class="chips" style="margin-top:26px">' +
-    '<div class="chip"><div class="v am">+20.5%</div><div class="c">ARTISTS</div></div>' +
-    '<div class="chip"><div class="v am">+13.8%</div><div class="c">FILM DIRECTORS</div></div>' +
-    '<div class="chip"><div class="v am">+19.2%</div><div class="c">SCIENTISTS</div></div></div>' +
-    '<p class="mut" style="font-size:21px;line-height:1.5;margin-top:16px;max-width:none">Hot-streak lift when exploration precedes exploitation — either half alone does worse than chance.</p>' +
+    '<p class="defn"><strong>A hot streak</strong> is the four-or-so-year run when your work lands far above your own average. Nine careers in ten contain one; your output <em>rate</em> doesn\'t change during it; it can start at any age.</p>' +
+    '<div class="ord">' +
+    '<div class="r hd"><div class="seq"><span class="ph">First half</span>' +
+    '<span class="to"></span><span class="ph">Then</span></div>' +
+    '<div class="out">Chance a hot streak starts</div></div>' +
+    '<div class="r"><div class="seq"><span class="ph cy">EXPLORE</span>' +
+    '<span class="to">→</span><span class="ph none">never narrowed</span></div>' +
+    '<div class="out cy">↓ &nbsp;BELOW CHANCE</div></div>' +
+    '<div class="r"><div class="seq"><span class="ph none">never wandered</span>' +
+    '<span class="to">→</span><span class="ph mg">EXPLOIT</span></div>' +
+    '<div class="out mg">↓ &nbsp;BELOW CHANCE</div></div>' +
+    '<div class="r win"><div class="seq"><span class="ph am">EXPLORE</span>' +
+    '<span class="to am">→</span><span class="ph am">EXPLOIT</span></div>' +
+    '<div class="out"><span class="n">+20.5%</span><span class="l">artists</span>' +
+    '<span class="n">+13.8%</span><span class="l">directors</span>' +
+    '<span class="n">+19.2%</span><span class="l">scientists</span></div></div></div>' +
+    '<p class="ordnote">Each half is read off the work itself — how spread out your styles or topics are, window by window: wide, then narrow. <em>Chance</em> is the same careers, shuffled. <em>Lift</em> is the gap against that.</p>' +
     '<div class="src">Liu, Dehmamy, Chown, Giles &amp; Wang (2021) <em>Nature Communications</em> 12:5392 · <a href="https://doi.org/10.1038/s41467-021-25477-8">doi</a> — ' +
     '800,000 artworks, 79,000 films, 20,000 scientists; observational, no causal claim &nbsp;·&nbsp; ' +
     'no peak age — hot streaks land uniformly at random across a career; John Fenn\'s ended in a Nobel at 85: Liu et al. (2018) <em>Nature</em> 559:396–399 · <a href="https://doi.org/10.1038/s41586-018-0315-8">doi</a></div>'

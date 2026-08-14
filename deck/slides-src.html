@@ -136,6 +136,43 @@ ul.take li{font-family:var(--display);font-weight:400;font-size:29px;
 .chip .c{font:500 14px/1.5 var(--mono);text-transform:uppercase;
   color:var(--faint);letter-spacing:.16em;margin-top:8px}
 
+/* orderings table (slide 32): a result about *sequence* has to be shown as a
+   sequence. Two slots per row = the two halves; a row wins only when both are
+   filled, in that order. Row colours match SIM 5's three panels on purpose. */
+.defn{font-size:20px;line-height:1.5;font-weight:450;color:var(--ink2);
+  max-width:none;margin:0 0 18px}
+.ord{margin:0}
+.ord .r{display:flex;gap:22px;align-items:center;padding:11px 14px;
+  border-top:1px solid var(--rule);border-radius:4px}
+.ord .r.hd{border-top:none;padding:0 14px 9px;color:var(--faint)}
+.ord .r.win{background:var(--surface);border-top-color:transparent}
+.ord .seq{flex:0 0 500px;display:flex;gap:13px;align-items:center}
+.ord .ph{flex:0 0 218px;text-align:center;font:600 17px/1 var(--mono);
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink);
+  background:var(--surface2);border-radius:4px;padding:13px 8px}
+.ord .ph.none{background:none;border:1px dashed var(--rulehi);color:var(--faint);
+  font-weight:400;padding:12px 7px;letter-spacing:.05em}
+.ord .to{flex:0 0 20px;text-align:center;font:400 19px/1 var(--mono);color:var(--faint)}
+.ord .out{font:600 19px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
+  display:flex;align-items:baseline;color:var(--dim)}
+.ord .r.hd .ph{background:none;border:none;padding:0;font-weight:700;font-size:13px;
+  letter-spacing:.18em;color:var(--faint)}
+.ord .r.hd .out{font-weight:700;font-size:13px;letter-spacing:.18em}
+.ord .out .n{font-family:var(--display);font-weight:600;font-size:31px;
+  letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:var(--amber);
+  text-transform:none}
+.ord .out .l{font:500 12px/1 var(--mono);letter-spacing:.1em;color:var(--faint);
+  margin:0 18px 0 8px}
+.ord .out .l:last-child{margin-right:0}
+/* the row colours are the point — .cy/.am/.mg alone lose to .ord .ph on
+   specificity, so they get restated here */
+.ord .ph.cy{color:var(--cyan)} .ord .ph.mg{color:var(--magenta)}
+.ord .ph.am{color:var(--amber)} .ord .to.am{color:var(--amber)}
+.ord .out.cy{color:var(--cyan)} .ord .out.mg{color:var(--magenta)}
+.ordnote{font-size:17px;line-height:1.5;font-weight:450;color:var(--dim);
+  max-width:none;margin:16px 0 0}
+.ordnote em{color:var(--ink2);font-style:normal;font-weight:700}
+
 /* on-slide sources: every claim carries its reference and a real link */
 .src{position:absolute;left:68px;right:68px;bottom:26px;
   font:400 14px/1.6 var(--mono);color:var(--dim);letter-spacing:.015em}

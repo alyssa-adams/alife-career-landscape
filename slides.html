@@ -186,6 +186,7 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
   color:var(--dim);border:1px solid var(--rulehi);padding:11px 18px;
   border-radius:4px;cursor:pointer}
 .sim-btn:hover{border-color:var(--cyan);color:var(--ink)}
+.sim-btn.on{border-color:var(--amber);color:var(--amber);background:#1B160B}  /* toggle active */
 .readout{position:relative;height:0}
 .ro-cell{position:absolute;top:0;text-align:center}
 .ro-title{font:700 16px/1.3 var(--mono);letter-spacing:.12em;white-space:nowrap}
@@ -542,6 +543,14 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
       ctx.scale(dpr, dpr);
       cfg.render(ctx, api);
       ctx.restore();
+
+      // mirror toggle-mode truth onto any button that declares lit()
+      var cs = cfg.controls || [];
+      for (var bi = 0; bi < cs.length; bi++) {
+        if (cs[bi].type === 'button' && cs[bi].lit && cs[bi]._btn) {
+          cs[bi]._btn.classList.toggle('on', !!cs[bi].lit(api));
+        }
+      }
     }
 
     function start() {
@@ -631,6 +640,11 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
           btn.textContent = c.label;
           btn.addEventListener('click', function () { c.onClick(api, ctrl); });
           controlsEl.appendChild(btn);
+          // lit(): sims expose the toggle's truth (a closure boolean) and the
+          // frame loop mirrors it onto the button — so a mode button visibly
+          // stays ON, and RESET clearing the mode also unlights it. Without
+          // this, TRUE FIELD / PIVOT RULE gave no feedback at all.
+          c._btn = btn;
         }
       });
 
@@ -1730,7 +1744,8 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
           onChange: function (v, api) { api.state.rebuildH = true; } },
         { type: 'slider', key: 'beta', label: 'GOLD INNER SENSE', lo: 'none', hi: 'only',
           min: 0, max: 1, step: 0.01, value: 0.45, narrow: true, gold: true },
-        { type: 'button', label: 'TRUE FIELD', onClick: function () { revealed = !revealed; } },
+        { type: 'button', label: 'TRUE FIELD', onClick: function () { revealed = !revealed; },
+          lit: function () { return revealed; } },
         { type: 'button', label: 'RESET ⟲', onClick: function (api, ctrl) {
             revealed = false; ctrl.hardReset();
           } }
@@ -3184,7 +3199,8 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
           min: 6, max: 30, step: 0.5, value: P.ANNEAL_SECS, gold: true },
         { type: 'button', label: 'PIVOT RULE', onClick: function (api, ctrl) {
             pivotMode = !pivotMode; ctrl.hardReset();
-          } },
+          },
+          lit: function () { return pivotMode; } },
         { type: 'button', label: 'RESET ⟲', onClick: function (api, ctrl) {
             pivotMode = false; ctrl.hardReset();
           } }
@@ -3240,8 +3256,11 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
 
         st.readout = function () {
           // note = temperature policy per panel, so the slider's scope is
-          // printed where the eye already is (labels live in HTML, rule 7)
-          var notes = ['T FIXED · HIGH', 'T FIXED · LOW', 'T COOLS (SLIDER)'];
+          // printed where the eye already is (labels live in HTML, rule 7);
+          // the gold note flips while pivot mode is armed, so the plot's
+          // changed tail is announced where she's already looking
+          var notes = ['T FIXED · HIGH', 'T FIXED · LOW',
+                       pivotMode ? 'PIVOT ON · RE-HEATS' : 'T COOLS (SLIDER)'];
           return P.POPS.map(function (pp, k) {
             return { x: PGAP + k * (PAN + PGAP), w: PAN, title: pp.label, color: pp.color,
                      value: '', note: notes[k] };
@@ -3420,6 +3439,11 @@ cite{display:block;margin-top:14px;font:400 16px/1.4 var(--mono);
           g.fillStyle = col;
           var hgt = PAN * K.clamp(tf, 0, 1);
           g.fillRect(ox - 24, PY + PAN - hgt, 14, hgt);
+          // outline the track so an EMPTY thermometer (the cold panel) still
+          // reads as a gauge at zero rather than as nothing at all
+          g.strokeStyle = '#33333F';
+          g.lineWidth = 1.5;
+          g.strokeRect(ox - 23.5, PY + 0.5, 13, PAN - 1);
         }
 
         // -- landscape-shift flash -----------------------------------------
@@ -4255,8 +4279,11 @@ window.PICBREEDER = {
     overlay: [
       { x: 27,   y: 566, text: 'AVG QUALITY', rot: true },
       { x: 1229, y: 682, text: 'TIME → 30 S', anchor: 'right' },
-      { x: 648,  y: 480, text: 'SHIFT · 15 S', anchor: 'left' },
-      { x: 1239, y: 452, text: 'MEAN OF 16 RUNS · BAND ±1 S.D.', anchor: 'right' }
+      { x: 648,  y: 480, text: 'SHIFT · 15 S · THE TOP PEAK MOVES', anchor: 'left' },
+      { x: 1239, y: 452, text: 'MEAN OF 16 RUNS · BAND ±1 S.D.', anchor: 'right' },
+      { x: 24,   y: 426, text: 'T', anchor: 'center' },
+      { x: 437,  y: 426, text: 'T', anchor: 'center' },
+      { x: 850,  y: 426, text: 'T', anchor: 'center' }
     ],
     src: 'Metropolis acceptance = simulated annealing: Kirkpatrick, Gelatt &amp; Vecchi (1983) <em>Science</em> 220(4598):671–680 · ' +
          '<a href="https://doi.org/10.1126/science.220.4598.671">doi</a> ' +

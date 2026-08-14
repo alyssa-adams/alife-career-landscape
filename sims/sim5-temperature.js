@@ -136,7 +136,8 @@
           min: 6, max: 30, step: 0.5, value: P.ANNEAL_SECS, gold: true },
         { type: 'button', label: 'PIVOT RULE', onClick: function (api, ctrl) {
             pivotMode = !pivotMode; ctrl.hardReset();
-          } },
+          },
+          lit: function () { return pivotMode; } },
         { type: 'button', label: 'RESET ⟲', onClick: function (api, ctrl) {
             pivotMode = false; ctrl.hardReset();
           } }
@@ -192,8 +193,11 @@
 
         st.readout = function () {
           // note = temperature policy per panel, so the slider's scope is
-          // printed where the eye already is (labels live in HTML, rule 7)
-          var notes = ['T FIXED · HIGH', 'T FIXED · LOW', 'T COOLS (SLIDER)'];
+          // printed where the eye already is (labels live in HTML, rule 7);
+          // the gold note flips while pivot mode is armed, so the plot's
+          // changed tail is announced where she's already looking
+          var notes = ['T FIXED · HIGH', 'T FIXED · LOW',
+                       pivotMode ? 'PIVOT ON · RE-HEATS' : 'T COOLS (SLIDER)'];
           return P.POPS.map(function (pp, k) {
             return { x: PGAP + k * (PAN + PGAP), w: PAN, title: pp.label, color: pp.color,
                      value: '', note: notes[k] };
@@ -372,6 +376,11 @@
           g.fillStyle = col;
           var hgt = PAN * K.clamp(tf, 0, 1);
           g.fillRect(ox - 24, PY + PAN - hgt, 14, hgt);
+          // outline the track so an EMPTY thermometer (the cold panel) still
+          // reads as a gauge at zero rather than as nothing at all
+          g.strokeStyle = '#33333F';
+          g.lineWidth = 1.5;
+          g.strokeRect(ox - 23.5, PY + 0.5, 13, PAN - 1);
         }
 
         // -- landscape-shift flash -----------------------------------------

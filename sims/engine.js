@@ -285,6 +285,14 @@
       ctx.scale(dpr, dpr);
       cfg.render(ctx, api);
       ctx.restore();
+
+      // mirror toggle-mode truth onto any button that declares lit()
+      var cs = cfg.controls || [];
+      for (var bi = 0; bi < cs.length; bi++) {
+        if (cs[bi].type === 'button' && cs[bi].lit && cs[bi]._btn) {
+          cs[bi]._btn.classList.toggle('on', !!cs[bi].lit(api));
+        }
+      }
     }
 
     function start() {
@@ -374,6 +382,11 @@
           btn.textContent = c.label;
           btn.addEventListener('click', function () { c.onClick(api, ctrl); });
           controlsEl.appendChild(btn);
+          // lit(): sims expose the toggle's truth (a closure boolean) and the
+          // frame loop mirrors it onto the button — so a mode button visibly
+          // stays ON, and RESET clearing the mode also unlights it. Without
+          // this, TRUE FIELD / PIVOT RULE gave no feedback at all.
+          c._btn = btn;
         }
       });
 

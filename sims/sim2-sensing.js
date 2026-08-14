@@ -228,7 +228,8 @@
           onChange: function (v, api) { api.state.rebuildH = true; } },
         { type: 'slider', key: 'beta', label: 'GOLD INNER SENSE', lo: 'none', hi: 'only',
           min: 0, max: 1, step: 0.01, value: 0.45, narrow: true, gold: true },
-        { type: 'button', label: 'TRUE FIELD', onClick: function () { revealed = !revealed; } },
+        { type: 'button', label: 'TRUE FIELD', onClick: function () { revealed = !revealed; },
+          lit: function () { return revealed; } },
         { type: 'button', label: 'RESET ⟲', onClick: function (api, ctrl) {
             revealed = false; ctrl.hardReset();
           } }

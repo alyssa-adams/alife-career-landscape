@@ -482,8 +482,11 @@
     overlay: [
       { x: 27,   y: 566, text: 'AVG QUALITY', rot: true },
       { x: 1229, y: 682, text: 'TIME → 30 S', anchor: 'right' },
-      { x: 648,  y: 480, text: 'SHIFT · 15 S', anchor: 'left' },
-      { x: 1239, y: 452, text: 'MEAN OF 16 RUNS · BAND ±1 S.D.', anchor: 'right' }
+      { x: 648,  y: 480, text: 'SHIFT · 15 S · THE TOP PEAK MOVES', anchor: 'left' },
+      { x: 1239, y: 452, text: 'MEAN OF 16 RUNS · BAND ±1 S.D.', anchor: 'right' },
+      { x: 24,   y: 426, text: 'T', anchor: 'center' },
+      { x: 437,  y: 426, text: 'T', anchor: 'center' },
+      { x: 850,  y: 426, text: 'T', anchor: 'center' }
     ],
     src: 'Metropolis acceptance = simulated annealing: Kirkpatrick, Gelatt &amp; Vecchi (1983) <em>Science</em> 220(4598):671–680 · ' +
          '<a href="https://doi.org/10.1126/science.220.4598.671">doi</a> ' +

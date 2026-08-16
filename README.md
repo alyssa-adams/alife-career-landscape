@@ -18,13 +18,14 @@ Download **[`slides.html`](slides.html)** and open it in a browser. It is one
 self-contained file — no install, no network, nothing phones home. It works with
 wifi off, which is how it's presented.
 
-- **36 talk slides**, then **17 backup slides** behind them — the extended
+- **35 talk slides**, then **18 backup slides** behind them — the extended
   arguments, caveats, and full data tables that answer the questions the talk
   tends to provoke.
 - **Keys:** `→` next · `←` back · `g` + number + `Enter` jump to a slide ·
   `t` activity timer · `?` help.
-- Prefer paper? [`slides.pdf`](slides.pdf) is all 53 slides, static. You lose
-  the simulations and keep the argument.
+- Prefer paper? [`slides.pdf`](slides.pdf) is all 53 slides, static — each
+  simulation printed at a telling moment of its run. You lose the sliders and
+  keep the argument.
 
 Every factual claim carries its citation on the slide where it appears, with a
 working link. Claims the research could not verify are flagged on-slide rather
@@ -47,12 +48,12 @@ sliders and buttons are yours.
 |---|---|---|
 | 2 | Sayama's Swarm Chemistry, his published recipes, parameters untouched | `RECIPE ▸` cycles Pulsating Eye → Swinger → Cell with Two Nuclei → Rotary |
 | 3 | One agent in the swarm, two sensor dials | Drag `OUTWARD REACH` toward *blind*, then `INWARD GAIN` toward *numb* — the same swarm hands it four different lives |
-| 8 | Hill-climbing while the landscape decays underfoot | `CHANGE RATE` and `CROWDING` |
-| 12 | Boids (Reynolds 1987) steering on a visible field that isn't the true one | Slide `FIELDS` from *decoupled* to *aligned* and watch the flock's fortunes reverse |
-| 21 | The same 40 agents dropped into three ambient mixtures — real Swarm Chemistry | `RESHUFFLE ⟳` reseeds live; the three outcomes are unanimous over 16 seeds per pairing |
-| 26 | The copying trap (Lazer & Friedman 2007) | Watch the connected population lead, then stall |
-| 28 | Niche construction — the ground rises where they stand | `SCATTER THEM` |
-| 31 | Explore vs exploit vs anneal on a landscape that shifts mid-run | `PIVOT RULE`, then run it again |
+| 9 | Boids (Reynolds 1987) steering on a visible field that isn't the true one | Slide `WORLD FIELDS` from *apart* to *aligned* and watch the flock's fortunes reverse |
+| 11 | Hill-climbing while the landscape decays underfoot | `CHANGE RATE` and `CROWDING` |
+| 20 | The same 40 agents dropped into three ambient mixtures — real Swarm Chemistry | `RESHUFFLE ⟳` reseeds live; the three outcomes are unanimous over 16 seeds per pairing |
+| 25 | The copying trap (Lazer & Friedman 2007) | Watch the connected population lead, then stall |
+| 27 | Niche construction — the ground rises where they stand | `SCATTER THEM` |
+| 30 | Explore vs exploit vs anneal on a landscape that shifts mid-run | `PIVOT RULE`, then run it again |
 
 The Swarm Chemistry port is faithful, not decorative: kinetics ported
 line-for-line from Sayama's own GPLv3 simulator source (parameter order,
